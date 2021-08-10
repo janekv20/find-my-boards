@@ -1,20 +1,24 @@
 const seedUsers = require('./user-seeds');
 const seedrank = require('./rank-seeds');
 const seedfriends = require('./friends-seeds');
+const seedGame = require('./game-seeds')
 
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  console.log('--------------');
+  console.log('-------DATABASE SYNCED-------');
   await seedUsers();
-  console.log('--------------');
+  console.log('------USERS SEEDED--------');
 
   await seedrank();
-  console.log('--------------');
+  console.log('-------RANK SEEDED-------');
 
   await seedfriends();
-  console.log('--------------');
+  console.log('-------FRIENDS SEEDED-------');
+
+  await seedGame();
+  console.log('------GAMES SEEDED-------')
 
   process.exit(0);
 };
