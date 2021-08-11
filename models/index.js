@@ -14,7 +14,7 @@ Game.belongsTo(Categories, {
 })
 
 //Categories has many games
-Categories.hasMany( Games, {
+Categories.hasMany( Game, {
     foreignKey: 'category_id'
 })
 

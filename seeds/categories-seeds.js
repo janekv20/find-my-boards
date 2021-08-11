@@ -1,4 +1,3 @@
-const sequelize = require('../config/connection');
 const { Categories } = require('../models');
 
 const catData = [
@@ -19,6 +18,6 @@ const catData = [
     },
 ];
 
-const seedCategories = () => Categories.bulkCreate(catData);
+const seedCat = () => Categories.bulkCreate(catData);
 
-module.exports = seedCategories;
+module.exports = seedCat;

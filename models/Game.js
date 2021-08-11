@@ -31,7 +31,7 @@ Game.init(
             allowNull: false
         },
         avg_min_game_time: {
-            type: DataTypes.RANGE,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         avg_max_game_time: {
