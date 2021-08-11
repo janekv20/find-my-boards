@@ -57,7 +57,15 @@ The source code for the site is licensed under the MIT license and can be found 
     * [Joshsands](http://github.com/Joshsands).
 
 * Or e-mail us at:
-<!-- add emails here -->
+giannellimj@gmail.com
 <!-- add emails here -->
 <!-- add emails here -->
 josh.sands@mail.com.
+
+## Elevator Pitch
+
+The quarantine enacted by COVID caused us to lose connection with many of our social groups making it difficult to get together and play games.
+Many of our friends may have moved or decided to stay in a self quarantine with the pandemic still in full swing. As a result, they find themselves
+without anyone to play or discuss one of their favorite hobbies, board games! We created a social platform that will allow this individual to connect
+with other board game enthusiasts on games they both enjoy or discover new games together. They will be able to find, follow, and chat with like minded individuals 
+in the board game community to create life long connections!
