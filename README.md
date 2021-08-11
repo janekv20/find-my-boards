@@ -58,7 +58,7 @@ The source code for the site is licensed under the MIT license and can be found 
 
 * Or e-mail us at:
 giannellimj@gmail.com
-<!-- add emails here -->
+jessica.sheleg@gmail.com
 <!-- add emails here -->
 josh.sands@mail.com.
 
@@ -69,3 +69,26 @@ Many of our friends may have moved or decided to stay in a self quarantine with 
 without anyone to play or discuss one of their favorite hobbies, board games! We created a social platform that will allow this individual to connect
 with other board game enthusiasts on games they both enjoy or discover new games together. They will be able to find, follow, and chat with like minded individuals 
 in the board game community to create life long connections!
+
+## User Story
+
+    AS an avid board game enthusiast
+    I WANT an online social platform for board games
+    SO THAT I can connect with the board game community, rank and discover new board games, and set up game nights with friends. 
+
+## Acceptance Criteria
+
+    GIVEN the find-my-boards home page
+    THEN I am  presented with the title of the application, a short description, the current top 10 list of user rated board games, and a link to login or create a new account
+    WHEN I click on the login link
+    THEN I am directed to either login or create my account( links will be seperate pages)
+    WHEN I log into my profile
+    THEN I am presented with a dashboard that includes my favorite games and friends list as well as search functions for finding new games and friends.
+    WHEN I use the board game search function
+    THEN I can enter board game parameters such as title, catagory or number of players and be presented with a list of matching games 
+    WHEN I select a board game
+    THEN I am presented with the game description, a way to make comments, read comments and view the current ratings of the game based on user feedback
+    WHEN I navigate to the friends list
+    THEN I am redirected to a page that allows me to search for a username or filter for users based on their friends list
+    WHEN I select a user from the community
+    THEN I am able to view the user's profile, add them to my friends list(follow), see their favorite games and view the history of their posted comments. 
