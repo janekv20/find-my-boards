@@ -7,6 +7,20 @@ const Categories = require('./Categories');
 
 
 // create associations here
+User.hasMany(Friends, {
+    foreignKey: 'user_id'
+})
 
+Friends.hasMany(User, {
+    foreignKey: 'user_id'
+})
 
-module.exports = { User, Rank, Friends, Game , Categories};
+Friends.belongsToMany(User, {
+    foreignKey: 'user_id'
+})
+
+User.belongsToMany(Friends, {
+    foreignKey: 'user_id'
+})
+
+module.exports = { User, Rank, Friends, Game, Categories };
