@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Rank, Friends, Game } = require('../../models');
+const { User, Rank, Friends } = require('../../models');
 
 // get users
 router.get('/', (req, res) => {
@@ -21,26 +21,26 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        include: [
-            // games and all it's attributes
-            {
-                model: Game,
-                attributes: ['id', 'game_name', 'category_tag', 'number_of_players', 'game_time']
-            },
-            // friends their and all it's attributes
-            {
-                model: Friends,
-                attributes: ['id'] //need to figure out how to bring in username with sequelize
-            },
-            // comments and all their attributes and include game names they commented on
-            // games attribute name through rank as ranked games
-            {
-                model: Game,
-                attributes: ['game_name'],
-                through: Rank,
-                as: 'ranked_games'
-            }
-        ]
+        // include: [
+        //     // games and all it's attributes
+        //     {
+        //         model: Game,
+        //         attributes: ['id', 'game_name', 'category_tag', 'number_of_players', 'game_time']
+        //     },
+        //     // friends their and all it's attributes
+        //     {
+        //         model: Friends,
+        //         attributes: ['id'] //need to figure out how to bring in username with sequelize
+        //     },
+        //     // comments and all their attributes and include game names they commented on
+        //     // games attribute name through rank as ranked games
+        //     {
+        //         model: Game,
+        //         attributes: ['game_name'],
+        //         through: Rank,
+        //         as: 'ranked_games'
+        //     }
+        // ]
     })
         .then(dbUserData => {
             if (!dbUserData) {
