@@ -31,4 +31,4 @@ Game.init(
     }
 )
 
-model.exports = Game;
+module.exports = Game;
