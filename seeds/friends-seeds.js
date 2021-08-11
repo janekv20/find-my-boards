@@ -6,6 +6,6 @@ const friendsdata = [
   }
 ];
 
-const seedFriends = () => Rank.bulkCreate(friendsdata);
+const seedFriends = () => Friends.bulkCreate(friendsdata);
 
 module.exports = seedFriends;
