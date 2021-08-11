@@ -5,14 +5,26 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
+1. [User Story](#user-story)
+2. [Acceptance Criteria](#acceptance-criteria)
+3. [Project Description](#project-description)
+4. [Installation Instructions](#installation-instructions)
+5. [Usage Information](#usage-information)
+6. [Contributor Guidelines](#contributor-guidelines)
+7. [Testing Instructions](#testing-instructions)
+8. [License Info](#license-info)
+9. [Questions](#questions)
 
-1. [Project Description](#project-description)
-2. [Installation Instructions](#installation-instructions)
-3. [Usage Information](#usage-information)
-4. [Contributor Guidelines](#contributor-guidelines)
-5. [Testing Instructions](#testing-instructions)
-6. [License Info](#license-info)
-7. [Questions](#questions)
+## User Story
+    AS an avid board game enthusiast
+    I WANT an online social platform for board games
+    SO THAT I can connect with the board game community, rank and discover new board games, and set up game nights with friends
+
+
+## Acceptance Criteria
+
+
+
 
 ## Visual Demonstration
 
