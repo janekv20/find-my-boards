@@ -23,5 +23,18 @@
   "bugs": {
     "url": "https://github.com/janekv20/find-my-boards/issues"
   },
-  "homepage": "https://github.com/janekv20/find-my-boards#readme"
+
+  "homepage": "https://github.com/janekv20/find-my-boards#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  }
 }
