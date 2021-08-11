@@ -14,6 +14,9 @@ const catData = [
     {
         category_name: "Storytelling"
     },
+    {
+        category_name: "Gambling"
+    },
 ];
 
 const seedCategories = () => Categories.bulkCreate(catData);
