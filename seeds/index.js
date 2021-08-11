@@ -2,7 +2,7 @@ const seedUsers = require('./user-seeds');
 const seedrank = require('./rank-seeds');
 const seedfriends = require('./friends-seeds');
 const seedGame = require('./game-seeds')
-const seedCategories = require('./categories-seeds')
+const seedCat = require('./categories-seeds')
 
 const sequelize = require('../config/connection');
 

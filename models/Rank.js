@@ -15,7 +15,6 @@ Rank.init(
     game_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: null,
       references: {
         model: 'game',
         key: 'id'
@@ -24,7 +23,6 @@ Rank.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: null,
       references: {
         model: 'user',
         key: 'id'

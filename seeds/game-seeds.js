@@ -1,4 +1,3 @@
-const { model } = require("../config/connection");
 const{ Game} = require("../models");
 
 
@@ -53,4 +52,4 @@ const gameData = [
 ];
 
 const seedGame = () => Game.bulkCreate(gameData);
-model.exports = seedGame;
+module.exports = seedGame;
