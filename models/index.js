@@ -5,13 +5,6 @@ const Friends = require('./Friends');
 const Game = require('./Game');
 const Categories = require('./Categories');
 const Following = require('./Following');
-const Followship = require('./Followship');
-
-
-// // create associations here
-// User.hasMany(Friends, {
-//     foreignKey: 'user_id'
-// })
 
 //Game belongs to Categories
 Game.belongsTo(Categories, {
@@ -23,20 +16,13 @@ Categories.hasMany(Game, {
     foreignKey: 'category_id'
 })
 
-// User.hasOne(Following, {
-//     foreignKey: 'user_id'
-// })
-
-// Following.hasMany(User, {
-//     foreignKey: 'user_id'
-// })
-
-Followship.belongsTo(User, {
+Following.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
-User.hasMany(Followship, {
+User.hasMany(Following, {
     foreignKey: 'user_id'
 })
 
-module.exports = { User, Rank, Friends, Game, Categories, Following, Followship };
+
+module.exports = { User, Rank, Friends, Game, Categories, Following };
