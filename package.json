@@ -4,28 +4,6 @@
   "description": "## License",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
-    "mysql2": "^2.3.0",
-    "sequelize": "^6.6.5"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed" : "node seeds/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/janekv20/find-my-boards.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/janekv20/find-my-boards/issues"
-  },
-
-  "homepage": "https://github.com/janekv20/find-my-boards#readme",
-  "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^10.0.0",
@@ -36,5 +14,21 @@
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.0",
     "sequelize": "^6.6.5"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janekv20/find-my-boards.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janekv20/find-my-boards/issues"
+  },
+  "homepage": "https://github.com/janekv20/find-my-boards#readme"
 }
