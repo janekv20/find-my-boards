@@ -3,6 +3,7 @@ const seedrank = require('./rank-seeds');
 const seedfriends = require('./friends-seeds');
 const seedGame = require('./game-seeds')
 const seedCat = require('./categories-seeds')
+const seedComments = require('./comment-seeds')
 
 const sequelize = require('../config/connection');
 
@@ -19,11 +20,14 @@ const seedAll = async () => {
   await seedUsers();
   console.log('------USERS SEEDED--------');
 
-  await seedrank();
-  console.log('-------RANK SEEDED-------');
-
   await seedfriends();
   console.log('-------FRIENDS SEEDED-------');
+
+  await seedComments();
+  console.log('------COMMENTS SEEDED-------')
+
+  // await seedrank();
+  // console.log('-------RANK SEEDED-------');
 
   process.exit(0);
 };

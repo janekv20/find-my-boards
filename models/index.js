@@ -4,6 +4,7 @@ const Rank = require('./Rank');
 const Friends = require('./Friends');
 const Game = require('./Game');
 const Categories = require('./Categories');
+const Comment = require('./Comment');
 
 
 // create associations here
@@ -18,4 +19,4 @@ Categories.hasMany( Game, {
     foreignKey: 'category_id'
 })
 
-module.exports = { User, Rank, Friends, Game , Categories};
+module.exports = { User, Rank, Friends, Game, Categories, Comment};
