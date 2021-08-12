@@ -12,9 +12,15 @@ const Following = require('./Following');
 //     foreignKey: 'user_id'
 // })
 
-// Friends.hasMany(User, {
-//     foreignKey: 'user_id'
-// })
+//Game belongs to Categories
+Game.belongsTo(Categories, {
+    foreignKey: 'category_id'
+})
+
+//Categories has many games
+Categories.hasMany( Game, {
+    foreignKey: 'category_id'
+})
 
 // User.hasOne(Following, {
 //     foreignKey: 'user_id'
