@@ -1,7 +1,6 @@
 // import all models
 const User = require('./User');
 const Rank = require('./Rank');
-const Friends = require('./Friends');
 const Game = require('./Game');
 const Categories = require('./Categories');
 const Following = require('./Following');
@@ -25,4 +24,4 @@ User.hasMany(Following, {
 })
 
 
-module.exports = { User, Rank, Friends, Game, Categories, Following };
+module.exports = { User, Rank, Game, Categories, Following };

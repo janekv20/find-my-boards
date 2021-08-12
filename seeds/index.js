@@ -1,6 +1,5 @@
 const seedUsers = require('./user-seeds');
 const seedrank = require('./rank-seeds');
-const seedfriends = require('./friends-seeds');
 const seedGame = require('./game-seeds')
 const seedCat = require('./categories-seeds')
 
@@ -21,9 +20,6 @@ const seedAll = async () => {
 
   await seedrank();
   console.log('-------RANK SEEDED-------');
-
-  await seedfriends();
-  console.log('-------FRIENDS SEEDED-------');
 
   process.exit(0);
 };

@@ -9,6 +9,6 @@ router.use('/users', userRoutes);
 router.use('/rank', rankRoutes);
 router.use('/categories', categoriesRoutes);
 router.use('/games', gameRoutes);
-router.use('/following', followingRoutes);
+router.use('/followings', followingRoutes);
 
 module.exports = router;
