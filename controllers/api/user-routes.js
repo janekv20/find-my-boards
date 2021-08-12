@@ -23,24 +23,8 @@ router.get('/:id', (req, res) => {
     },
     include: [
       {
-        model: Followship,
-        attributes: ['follower_id'],
-        include: [
-          {
-            model: User,
-            attributes: ['username']
-          }
-        ]
-      },
-      {
-        model: Followship,
-        attributes: ['followee_id'],
-        include: [
-          {
-            model: User,
-            attributes: ['username']
-          }
-        ]
+        model: Following,
+        attributes: ['id', 'following_username'],
       }
     ]
     // include: [
