@@ -18,22 +18,22 @@ Comment.init(
       validate: {
         len: [1],
       },
-    // },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: "user",
-    //     key: "id",
-    //   },
-    // },
-    // game_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: true,
-    //   references: {
-    //     model: "game",
-    //     key: "id",
-    //   },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+    game_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "game",
+        key: "id",
+      },
     },
   },
   {
