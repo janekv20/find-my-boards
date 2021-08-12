@@ -20,6 +20,7 @@ Categories.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
+        timestamps: false,
         modelName: 'categories'
     }
 );
