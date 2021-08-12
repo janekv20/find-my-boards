@@ -24,4 +24,8 @@ const Following = require('./Following');
 //     foreignKey: 'user_id'
 // })
 
+// User.belongsToMany(User, {
+//     foreignKey: ''
+// })
+
 module.exports = { User, Rank, Friends, Game, Categories, Following };

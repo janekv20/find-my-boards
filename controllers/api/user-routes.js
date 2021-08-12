@@ -21,24 +21,6 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    include: [
-      {
-        model: Friends,
-        attributes: ['id'],
-        include: {
-          model: User,
-          attributes: ['user_id', 'username']
-        }
-      },
-      {
-        model: Following,
-        attributes: ['id'],
-        include: {
-          model: User,
-          attributes: ['user_id', 'username']
-        }
-      }
-    ]
     // include: [
     //     // games and all it's attributes
     //     {

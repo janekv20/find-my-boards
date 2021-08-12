@@ -41,6 +41,16 @@ class User extends Model {
         validate: {
           len: [6]
         }
+      },
+      following: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        unique: true
+      },
+      followers: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        unique: true
       }
     },
     {
