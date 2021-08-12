@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Rank, Friends, Following } = require('../../models');
+const { User, Rank, Friends, Following, Followship } = require('../../models');
 
 // get users
 router.get('/', (req, res) => {
@@ -21,6 +21,28 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
+    include: [
+      {
+        model: Followship,
+        attributes: ['follower_id'],
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          }
+        ]
+      },
+      {
+        model: Followship,
+        attributes: ['followee_id'],
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          }
+        ]
+      }
+    ]
     // include: [
     //     // games and all it's attributes
     //     {
