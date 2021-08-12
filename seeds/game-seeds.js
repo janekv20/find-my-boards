@@ -4,7 +4,7 @@ const{ Game} = require("../models");
 const gameData = [
     {
         game_name: "Plunder",
-        category_tag: 2,
+        category_id: 2,
         min_number_of_players: 2,
         max_number_of_players: 6,
         avg_min_game_time: 40,
@@ -13,7 +13,7 @@ const gameData = [
     },
     {
         game_name: "UNO",
-        category_tag: 1,
+        category_id: 1,
         min_number_of_players: 2 ,
         max_number_of_players: 10 ,
         avg_min_game_time: 60,
@@ -22,7 +22,7 @@ const gameData = [
     },
     {
         game_name: "Cards Against Humanity",
-        category_tag: 3,
+        category_id: 3,
         min_number_of_players: 3 ,
         max_number_of_players: 20 ,
         avg_min_game_time: 30,
@@ -31,7 +31,7 @@ const gameData = [
     },
     {
         game_name: "Cubitos",
-        category_tag: 5,
+        category_id: 5,
         min_number_of_players: 2 ,
         max_number_of_players: 4 ,
         avg_min_game_time: 30,
@@ -40,14 +40,24 @@ const gameData = [
     },
     {
         game_name: "Once Upon a Time",
-        category_tag: 4,
+        category_id: 4,
         min_number_of_players: 2 ,
         max_number_of_players: 6 ,
         avg_min_game_time: 15,
         avg_max_game_time: 60,
         game_description:" Stem into the world of fairy tales. It's full of wicked queens, talking cauldrons and lucky boys who stumble upon magic objects, but unlike normal fairy tales, you control the action."
 
-    }
+    },
+    //data used to create a new game
+    // {
+    //     game_name: "Clue",
+    //     category_id: 2,
+    //     min_number_of_players: 3,
+    //     max_number_of_players: 6,
+    //     avg_min_game_time: 10,
+    //     avg_max_game_time: 60,
+    //     game_description: "The classic detective game! Players move from room to room in a mansion to solve the mystery of: who done it, with what, and where? Players are dealt character, weapon, and location cards after the top card from each card type is secretly placed in the confidential file in the middle of the board. Players must move to a room and then make an accusation against a character by stating a specific weapon and room.Through deductive reasoning each player must figure out which character, weapon, and location are in the secret file. "
+    // }
 
 ];
 
