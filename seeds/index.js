@@ -1,6 +1,5 @@
 const seedUsers = require('./user-seeds');
 const seedrank = require('./rank-seeds');
-const seedfriends = require('./friends-seeds');
 const seedGame = require('./game-seeds')
 const seedCat = require('./categories-seeds')
 const seedComments = require('./comment-seeds')

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Rank, Friends, Game, Comment } = require("../../models");
+const { User, Rank, Following, Game, Comment } = require("../../models");
 
 // get users
 router.get("/", (req, res) => {
@@ -36,11 +36,7 @@ router.get("/:id", (req, res) => {
           "game_description"
         ],
       },
-      // // friends their and all it's attributes
-      // {
-      //   model: Friends,
-      //   attributes: ["id"], //need to figure out how to bring in username with sequelize
-      // },
+
 
       // comments and all their attributes and include game names they commented on
       {
@@ -49,17 +45,17 @@ router.get("/:id", (req, res) => {
         include: {
           model: Game,
           attributes: ["game_name"],
+          // through: Rank,
+          // as: "ranks",
         },
       },
-
       // games attribute name through rank as ranked games
+
       {
-        model: Game,
-        attributes: ["game_name"],
-        through: Rank,
-        as: "ranks",
+        model: Following,
+        attributes: ['id', 'following_username'],
       },
-    ],
+    ]
   })
     .then((dbUserData) => {
       if (!dbUserData) {
@@ -75,13 +71,13 @@ router.get("/:id", (req, res) => {
 });
 
 //create username
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password,
+    password: req.body.password
   })
-    .then((dbUserData) => {
+    .then(dbUserData => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
@@ -131,28 +127,6 @@ router.delete("/:id", (req, res) => {
         return;
       }
       res.json(dbUserData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-router.post("/", (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-  User.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-  })
-    .then((dbUserData) => {
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-
-        res.json(dbUserData);
-      });
     })
     .catch((err) => {
       console.log(err);
