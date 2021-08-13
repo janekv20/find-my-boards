@@ -36,11 +36,7 @@ router.get("/:id", (req, res) => {
           "game_description"
         ],
       },
-      // // friends their and all it's attributes
-      // {
-      //   model: Friends,
-      //   attributes: ["id"], //need to figure out how to bring in username with sequelize
-      // },
+
 
       // comments and all their attributes and include game names they commented on
       {
@@ -49,20 +45,17 @@ router.get("/:id", (req, res) => {
         include: {
           model: Game,
           attributes: ["game_name"],
+          // through: Rank,
+          // as: "ranks",
         },
       },
+      // games attribute name through rank as ranked games
+
       {
         model: Following,
         attributes: ['id', 'following_username'],
       },
-      // games attribute name through rank as ranked games
-      {
-        model: Game,
-        attributes: ["game_name"],
-        through: Rank,
-        as: "ranks",
-      },
-    ],
+    ]
   })
     .then((dbUserData) => {
       if (!dbUserData) {
