@@ -1,11 +1,14 @@
 <ol>
   {{#each games}}
     <li id="comment-page">
-      {{game_name}} <br>
-      {{game_description}}<br>
-      {{min_number_of_players}}<br>
-      {{max_number_of_players}}<br>
-      {{category.category_name}}<br>
+    <p>Game: {{game_name}} </p>
+    <p>Description: {{game_description}}</p>
+    <p>Players: {{min_number_of_players}}-{{max_number_of_players}}</p>
+    <p>Category: {{category.category_name}}</p>
+    <p>Comment: {{comments.[0].comment_text}}</p>
+    <p>Comment by: {{comments.[0].user.username}}</p>
+    <p>Created: {{comments.[0].created_at}}</p>
+      <br>
     </li>
   {{/each}}
 </ol>

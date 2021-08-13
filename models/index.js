@@ -24,26 +24,6 @@ User.hasMany(Following, {
     foreignKey: 'user_id'
 })
 
-User.hasMany(Game, {
-  foreignKey: "user_id",
-});
-
-Game.belongsTo(User, {
-  foreignKey: "user_id",
-});
-
-// User.belongsToMany(Game, {
-//   through: Rank,
-//   as: "ranks",
-//   foreignKey: "user_id",
-// });
-
-Game.belongsToMany(User, {
-  through: Rank,
-  as: "ranks",
-  foreignKey: "game_id",
-});
-
 Rank.belongsTo(User, {
   foreignKey: "user_id",
 });

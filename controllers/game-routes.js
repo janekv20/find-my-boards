@@ -30,7 +30,6 @@ router.get("/", (req, res) => {
       "avg_min_game_time",
       "avg_max_game_time",
       "game_description",
-      "user_id",
     //   [
     //     sequelize.literal(
     //       "(SELECT COUNT(*) FROM rank WHERE game.id = rank.game_id)"
@@ -61,6 +60,7 @@ router.get("/", (req, res) => {
     const games = dbGameData.map((game) =>
       game.get({ plain: true })
     );
+    console.log(games)
     res.render("game", { games });
   })
   .catch((err) => {
