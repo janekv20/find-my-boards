@@ -56,6 +56,8 @@ app.post('', (req, res) => {
   profilePic.mv(uploadPath, function (err) {
     if (err) return res.status(500).send(err);
 
+    
+
     // if file gets uploaded send back to profile page					
     res.redirect('/profile');
   });
