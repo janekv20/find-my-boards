@@ -22,22 +22,6 @@ router.get("/:id", (req, res) => {
       id: req.params.id,
     },
     include: [
-      // games and all it's attributes
-      {
-        model: Game,
-        attributes: [
-          "id",
-          "game_name",
-          "category_id",
-          "min_number_of_players",
-          "max_number_of_players",
-          "avg_min_game_time",
-          "avg_max_game_time",
-          "game_description"
-        ],
-      },
-
-
       // comments and all their attributes and include game names they commented on
       {
         model: Comment,
@@ -45,12 +29,17 @@ router.get("/:id", (req, res) => {
         include: {
           model: Game,
           attributes: ["game_name"],
-          // through: Rank,
-          // as: "ranks",
         },
       },
       // games attribute name through rank as ranked games
-
+      {
+        model: Rank,
+        attributes: ["id", "user_id", "game_id"],
+        include: {
+          model: Game,
+          attributes: ["game_name"],
+        },
+      },
       {
         model: Following,
         attributes: ['id', 'following_username'],
