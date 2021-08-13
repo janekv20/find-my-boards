@@ -34,32 +34,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 app.use(require('./controllers/'));
 
-// create a route to download a photo to the upload folder
-app.post('', (req, res) => {
-
-  let profilePic; 	// we will call a variable with the same name of the input we used on line 19 of this document					
-  let uploadPath;
-
-  // If no files were uploaded send message to user saying so						
-  if (!req.files || Object.keys(req.files).length === 0) {
-    return res.status(400).send('No files were uploaded.')
-  }
-
-  // if user uploads a file						
-  // get file object and get move function from object						
-  profilePic = req.files.profilePic;
-  
-  // create an upload path that we will pass into the move funciton or mv()	
-  uploadPath = __dirname + '/upload/' + profilePic.name;
-
-  // use mv() to place file on the server. Will move it to the directory we created on line 39 of this doc which moves it to the upload folder						
-  profilePic.mv(uploadPath, function (err) {
-    if (err) return res.status(500).send(err);
-
-    res.redirect('back');
-  });
-});
-
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
 });
