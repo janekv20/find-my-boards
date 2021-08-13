@@ -14,13 +14,6 @@ router.get("/", (req, res) => {
       "avg_min_game_time",
       "avg_max_game_time",
       "game_description",
-      "user_id",
-    //   [
-    //     sequelize.literal(
-    //       "(SELECT COUNT(*) FROM rank WHERE game.id = rank.game_id)"
-    //     ),
-    //     "rank_count",
-    //   ],
     ],
     include: [
       {
@@ -36,8 +29,12 @@ router.get("/", (req, res) => {
         },
       },
       {
-        model: User,
-        attributes: ["username"],
+        model: Rank,
+        attributes: ["id", "game_id", "user_id"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
       },
     ],
   })
@@ -63,13 +60,6 @@ router.get("/:id", (req, res) => {
       "avg_min_game_time",
       "avg_max_game_time",
       "game_description",
-      "user_id",
-    //   [
-    //     sequelize.literal(
-    //       "(SELECT COUNT(*) FROM rank WHERE game.id = rank.game_id)"
-    //     ),
-    //     "rank_count",
-    //   ],
     ],
     include: [
       {
@@ -85,8 +75,12 @@ router.get("/:id", (req, res) => {
         },
       },
       {
-        model: User,
-        attributes: ["username"],
+        model: Rank,
+        attributes: ["id", "game_id", "user_id"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
       },
     ],
   })
@@ -107,22 +101,11 @@ router.post("/", (req, res) => {
     avg_min_game_time: req.body.avg_min_game_time,
     avg_max_game_time: req.body.avg_max_game_time,
     game_description: req.body.game_description,
-    user_id: req.body.user_id,
   })
     .then((dbGameData) => res.json(dbGameData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
-    });
-});
-
-router.put("/rankup", (req, res) => {
-  // create the rank
-  Game.rankup(req.body, { Rank })
-    .then((dbGameData) => res.json(dbGameData))
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
     });
 });
 
