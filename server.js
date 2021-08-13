@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 app.use(require('./controllers/'));
 
-// create a route to upload a photo
+// create a route to download a photo to the upload folder
 app.post('', (req, res) => {
 
   let profilePic; 	// we will call a variable with the same name of the input we used on line 19 of this document					
@@ -48,7 +48,7 @@ app.post('', (req, res) => {
   // if user uploads a file						
   // get file object and get move function from object						
   profilePic = req.files.profilePic;
-  console.log(profilePic)
+  
   // create an upload path that we will pass into the move funciton or mv()	
   uploadPath = __dirname + '/upload/' + profilePic.name;
 
@@ -56,10 +56,7 @@ app.post('', (req, res) => {
   profilePic.mv(uploadPath, function (err) {
     if (err) return res.status(500).send(err);
 
-    
-
-    // if file gets uploaded send back to profile page					
-    res.redirect('/profile');
+    res.redirect('back');
   });
 });
 
