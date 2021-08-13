@@ -114,31 +114,6 @@ router.put("/:id", (req, res) => {
     });
 });
 
-// create a route to upload a photo
-router.post('', (req, res) => {
-
-  let sampleFile; 	// we will call a variable with the same name of the input we used on line 19 of this document					
-  let uploadPath;
-
-  // If no files were uploaded send message to user saying so						
-  if (!req.files || Object.keys(req.files).length === 0) {
-    return res.status(400).send('No files were uploaded.')
-  }
-
-  // if user uploads a file						
-  // get file object and get move function from object						
-  sampleFile = req.files.sampleFile;
-  uploadPath = __dirname + '/upload/' + sampleFile.name;			// create an upload path that we will pass into the move funciton or mv()			
-
-  // use mv() to place file on the server. Will move it to the directory we created on line 39 of this doc which moves it to the upload folder						
-  sampleFile.mv(uploadPath, function (err) {
-    if (err) return res.status(500).send(err);
-
-    // if file gets upload send a message. May not need this part						
-    res.send('File uploaded!');
-  });
-});
-
 // delete route
 router.delete("/:id", (req, res) => {
   User.destroy({
