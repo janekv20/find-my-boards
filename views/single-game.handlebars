@@ -1,22 +1,30 @@
-<section class = "game-highlight">
-    <div>
-    
-        <h1> {{game_name}}</h1>
-        <h2>{{category_name}}</h2>
-        {{!-- <img src? = > --}}
-
-    </div>
-    <div>
-
-        <p>Players: {{min_number_of_players}}--{{max_number_of_players}} players</p>
-        <p>Time: {{</p>{{avg_min_game_time}}--{{avg_max_game_time}} minutes</p>
-
-    </div>
-</section>
-
-<div class = "description">
-
-<p>game_description</p>
 
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/stylesheet/single-game.css">
+
+
+
+<div class="game-card">
+    <div class="cont">
+        <div class="title">
+            <p>{{game.game_name}}</p>
+            <h2>{{categories.category_name}}</h2>
+        </div>
+        <p id="play-details"><b>Game Details</b></p>
+        <div class="details">
+            <div class="game-info">
+                <p>Players</p>
+                <p>{{game.min_number_of_players}}--{{game.max_number_of_players}}</p>
+            </div>
+            <div class="game-info">
+                <p>Average Game Time</p>
+                <p>{{game.avg_min_game_time}}--{{game.avg_max_game_time}}</p>
+            </div>
+            <div class="game-description">
+                {{game.game_description}}
+            </div>
+        </div>
+    </div>     
 </div>
+

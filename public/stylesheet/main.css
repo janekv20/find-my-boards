@@ -60,3 +60,15 @@ nav a {
   width: 90px;
   height: 40px;
 }
+
+h2 {
+  text-align: center;
+}
+
+.github{
+  justify-content: center;
+}
+
+li{
+  list-style-type: none;
+}

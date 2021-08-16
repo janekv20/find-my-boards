@@ -1,53 +1,76 @@
+<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheet/{{style}}" />
-    <title>{{title}}</title>
-</head>
-
-<div class="header">
-<img src="/public/images/logo.png">
-</div>
-
-  <nav>
-    <a href="/">Home</a>
-    <a href="/game">Game</a>
-    {{#if loggedIn}}
-    <a href="/profile">Profile</a>
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <body>
-    
-      {{{body}}}
-
- </body>
-   <script src="/javascript/logout.js"></script>
-<footer class="footer"></footer>
-<h2><strong>Made by Group 3:</strong></h2>
-        <div class="content has-text-centered">
-            <div class="row">
-                        <!-- links to team's GitHub pages -->
-                        <div class="column">
-                            <a href="https://github.com/Joshsands" target="_blank"><button
-                                    class="josh">Joshua</button></a>
-                        </div>
-                        <div class="column">
-                            <a href="https://github.com/mjgiannelli" target="_blank"><button
-                                    class="mark">Mark</button></a>
-                        </div>
-                        <div class="column">
-                            <a href="https://github.com/JSheleg" target="_blank"><button
-                                    class="jessica">Jessica</button></a>
-                        </div>
-                        <div class="column">
-                            <a href="https://github.com/janekv20" target="_blank"><button
-                                    class="jane">Jane</button></a>
-                        </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {{!-- <link rel="stylesheet" href="/stylesheet/{{style}}" /> --}}
+        <link rel="stylesheet" href="/stylesheet/main.css" />
+        <title>{{title}}</title>
+    </head>
+    <body>
+        {{!-- hero --}}
+        
+        <div class="header">
+            <img src="/images/logo.png">
+        </div>
+        {{!-- navigation links --}}
+        <nav>
+            {{!-- unordered list item --}}
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/game">Game</a>
+                </li>
+                <li>
+                    {{#if loggedIn}}
+                    <a href="/profile">Profile</a>
+                    <button id="logout" class="btn-no-style">Logout</button>
+                </li>
+                <li>
+                    {{else}}
+                    <a href="/login">Login</a>
+                    {{/if}}
+                </li>
+            </ul>    
+        </nav>
+        <main>
+            {{{body}}}
+        </main>
+        <footer>
+            <h2><strong>Made by Group 3:</strong></h2>
+            <div class="content has-text-centered">
+                <div class="github row">
+                    <!-- links to team's GitHub pages -->
+                    <div class="column">
+                        <a href="https://github.com/Joshsands" target="_blank"><button
+                                class="josh">Joshua</button></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://github.com/mjgiannelli" target="_blank"><button
+                                class="mark">Mark</button></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://github.com/JSheleg" target="_blank"><button
+                                class="jessica">Jessica</button></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://github.com/janekv20" target="_blank"><button
+                                class="jane">Jane</button></a>
                     </div>
                 </div>
+            </div>
+
+            
+        </footer>
+        
+        
+        {{#if loggedIn}}
+        <script src="/javascript/logout.js"></script>
+        {{/if}}     
+            
+    </body>
+
 </html>
