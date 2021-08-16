@@ -56,12 +56,14 @@ router.get("/", (req, res) => {
     .then((dbGameData) => {
       const games = dbGameData.map((game) => game.get({ plain: true }));
       console.log(games);
-      res.render("game", { games });
+      
+      res.render("game",
+      { games });
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
-    });
+    })
 });
 
 module.exports = router;

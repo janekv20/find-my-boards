@@ -1,44 +1,53 @@
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FindMyBoards</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
+    <link rel="stylesheet" href="/stylesheet/{{style}}" />
+    <title>{{title}}</title>
+</head>
 
+<div class="header">
+<img src="/public/images/logo.png">
+</div>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/game">Game</a>
+    {{#if loggedIn}}
+    <a href="/profile">Profile</a>
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
   <body>
+    
+      {{{body}}}
 
-    <div class="wrapper">
-
-      <header>
-        <h1>
-          <a href="/">FindMyBoards</a>
-        </h1>
-
-        <nav><!-- .nav-menu -->
-
-        <ul>
-          <li><a href="/login" class="btn-no-style">Login</a></li>
-          <li><button id="logout" class="btn-no-style">Logout</button></li>
-          <li><a href="/" class="btn-no-style">Home</a></li>
-          <li><a href="/game" class="btn-no-style">Game</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-      </header>
-
-      <main>
-        {{{body}}}
-      </main>
-
-      <footer>
-
-      </footer>
-
-    </div>
-    <script src="/javascript/logout.js"></script>
-  </body>
-
+ </body>
+   <script src="/javascript/logout.js"></script>
+<footer class="footer"></footer>
+<h2><strong>Made by Group 3:</strong></h2>
+        <div class="content has-text-centered">
+            <div class="row">
+                        <!-- links to team's GitHub pages -->
+                        <div class="column">
+                            <a href="https://github.com/Joshsands" target="_blank"><button
+                                    class="josh">Joshua</button></a>
+                        </div>
+                        <div class="column">
+                            <a href="https://github.com/mjgiannelli" target="_blank"><button
+                                    class="mark">Mark</button></a>
+                        </div>
+                        <div class="column">
+                            <a href="https://github.com/JSheleg" target="_blank"><button
+                                    class="jessica">Jessica</button></a>
+                        </div>
+                        <div class="column">
+                            <a href="https://github.com/janekv20" target="_blank"><button
+                                    class="jane">Jane</button></a>
+                        </div>
+                    </div>
+                </div>
 </html>

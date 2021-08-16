@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+  }
+
+  .header {
+    padding: 30px;
+    text-align: center;
+    background:#C70000;
+    color: white;
+  }
+  
+body {
+    font-family: Garamond;
+    padding: 10px;
+    background: #BFDBAE;
+  }
+  
+  /*Header/Site title*/
+.header {
+    padding: 30px;
+    text-align: center;
+    background:#C70000;
+    color: white;
+  }
+  
+.header h1 {
+    font-size: 50px;
+  }
+  
+nav {
+    overflow: hidden;
+    background-color: #8FBC72;
+    border: 1px solid black;
+  }
+  
+nav a {
+    float: left;
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-right: 1px solid black;
+  }
+  
+  .josh {
+    background-color: orange;
+  }
+  
+  .mark {
+    background-color: green;
+  }
+  
+  .jessica {
+    background-color: yellow;
+  }
+  
+  .jane {
+    background-color: magenta;
+  }
+  

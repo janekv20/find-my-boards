@@ -1,0 +1,62 @@
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Garamond;
+  padding: 10px;
+  background: #BFDBAE;
+}
+
+/*Header/Site title*/
+.header {
+  padding: 30px;
+  text-align: center;
+  background:#C70000;
+  color: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+nav {
+  overflow: hidden;
+  background-color: #8FBC72;
+  border: 1px solid black;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-right: 1px solid black;
+}
+
+.josh {
+  background-color: orange;
+  width: 90px;
+  height: 40px;
+}
+
+.mark {
+  background-color: green;
+  width: 90px;
+  height: 40px;
+}
+
+.jessica {
+  background-color: yellow;
+  width: 90px;
+  height: 40px;
+}
+
+.jane {
+  background-color: magenta;
+  width: 90px;
+  height: 40px;
+}
