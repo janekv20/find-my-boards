@@ -1,33 +1,24 @@
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
-  </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-</form>
+<section="login-logout">
+<div class="row">
+	<div class="column">
+		<form action="#">
+			<h1>Sign in</h1>
+			<input type="email" id="email-login" placeholder="Email" />
+			<input type="password" id="password-login" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button id="sign-in">Sign In</button>
+		</form>
+	</div>
 
-<form class="signup-form">
-  <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
+  <div class="column">
+		  <form action="#">
+        <h1>Sign Up</h1>
+        <input type="username" id="username-signup" placeholder="Username" />
+        <input type="email" id="email-signup" placeholder="Email" />
+        <input type="password" id="password-signup" placeholder="Password" />
+			  <button id="sign-up">Sign Up</button>
+		  </form>
+	  </div>
   </div>
-  <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
-  </div>
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-  <div>
-    <button type="submit">signup</button>
-  </div>
-</form>
-
+</section>
 <script src="/javascript/login.js"></script>

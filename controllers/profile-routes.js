@@ -2,7 +2,10 @@ const router = require('express').Router();
 const { User } = require('../models');
 
 router.get('/profile/:id', (req, res) => {
-    res.render('profile')
+    res.render('profile', {
+      title: 'Profile',
+      style: 'dashboard.css'
+    })
 })
 
 // create a route to download a photo to the upload folder
