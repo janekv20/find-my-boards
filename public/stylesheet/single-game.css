@@ -9,20 +9,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column;
 }
 
-.card{
+header{
+    width: 100%
+}
+
+.game-card{
     background: white;
-    width: 400px;
-    height: 400px;
+    width: 550px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    margin: 20px;
 }
 
-.card .cont{
+.game-card .cont{
     width: 85%;
     height: 85%;
     border: 2px solid black;
@@ -32,7 +38,7 @@ body{
     align-items: center;
 }
 
-.card .cont .title{
+.game-card .cont .title{
     width: 100%;
     height: 25%;
     background-color: #3471c1;
@@ -44,18 +50,18 @@ body{
     border: 2px solid black;
 }
 
-.card .cont #play-details{
+.game-card .cont #play-details{
     margin-top: 10px;
 }
 
-.card .cont .details{
+.game-card .cont .details{
     display: flex;
     flex-direction: column;
     padding: 10px;
     align-items: center;
 }
 
-.card .cont .details .game-info{
+.game-card .cont .details .game-info{
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -63,8 +69,8 @@ body{
     margin: 1px;
 }
 
-.card .cont .game-description{
-    width: 55%;
+.game-card .cont .game-description{
+    /* width: 55%; */
     margin-top: 6px;
     text-align: center;
 }
