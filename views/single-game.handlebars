@@ -1,0 +1,45 @@
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/stylesheet/single-game.css">
+
+
+
+    <div class="game-card">
+        <div class="cont">
+            <div class="title">
+                <p>{{game.game_name}}</p>
+                <h2>category</h2>
+            </div>
+            <p id="play-details"><b>Game Details</b></p>
+            <div class="details">
+                <div class="game-info">
+                    <p>Players</p>
+                    <p>{{game.min_number_of_players}}-{{game.max_number_of_players}}</p>
+                </div>
+                <div class="game-info">
+                    <p>Average Game Time</p>
+                    <p>{{game.avg_min_game_time}}-{{game.avg_max_game_time}}</p>
+                </div>
+                <div class="game-description">
+                    {{game.game_description}}
+                </div>
+            </div>
+        </div>     
+    </div>
+
+    {{!-- <div class="comments">
+    {{#each this}}
+    <section class="comment">
+        <div class="meta">
+        {{!-- {{user.username}} on {{created_at}} --}}
+        {{!-- lhauxwell6 on 8/16/2021 --}}
+        {{!-- </div>
+        <div class="text">
+        {{!-- {{comment_text}} --}}
+        {{!-- This game is great! --}}
+        {{!-- </div>
+    </section>
+    {{/each}}
+    </div> --}} 
+

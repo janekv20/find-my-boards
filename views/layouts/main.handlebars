@@ -1,36 +1,59 @@
+<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheet/{{style}}" />
-    <title>{{title}}</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {{!-- <link rel="stylesheet" href="/stylesheet/{{style}}" /> --}}
+        {{!-- bootstrap --}}
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
+        <link rel="stylesheet" href="/stylesheet/main.css" />
+        <title>{{title}}</title>
+    </head>
+    <body>
+        {{!-- hero  and naviagion links--}}
 
-<div class="header">
-<img src="/public/images/logo.png">
-</div>
+        <header>
+            
+            <div class = " hero row">
+                <img src="/images/logo.png">
+            </div>
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/game">Game</a>
-    {{#if loggedIn}}
-    <a href="/profile">Profile</a>
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  <body>
-    
-      {{{body}}}
 
- </body>
-   <script src="/javascript/logout.js"></script>
-<footer class="footer"></footer>
-<h2><strong>Made by Group 3:</strong></h2>
-        <div class="content has-text-centered">
-            <div class="row">
+            <div class = "nav ">
+                <div class = "col-4">
+                    <a href="/">Home</a>
+                </div>
+                <div class = "col-4">
+                    <a href="/game">Game</a>
+                </div>
+                <div class = "col-4">
+                    {{#if loggedIn}}
+                    <a href="/profile">Profile</a>
+                    <button id="logout" class="btn-no-style">Logout</button>
+                </div>
+                <div class = "col-4">
+                    {{else}}
+                    <a href="/login">Login</a>
+                    {{/if}}
+                </div>
+            </div>
+            
+        </header>
+
+        {{!-- page content --}}
+        <main>
+            {{{body}}}
+        </main>
+        <footer class = "container">
+            <div class = "row justify-content-center">
+                <div class = "col-12">
+                    <h2><strong>Made by Group 3:</strong></h2>
+                </div>
+            </div>
+            <div class = "row justify-content-center">
+                
+                    <div class="github row">
                         <!-- links to team's GitHub pages -->
                         <div class="column">
                             <a href="https://github.com/Joshsands" target="_blank"><button
@@ -49,5 +72,39 @@
                                     class="jane">Jane</button></a>
                         </div>
                     </div>
+                
+            </div>
+            
+            {{!-- <div class="content has-text-centered">
+                <div class="github row">
+                    <!-- links to team's GitHub pages -->
+                    <div class="column">
+                        <a href="https://github.com/Joshsands" target="_blank"><button
+                                class="josh">Joshua</button></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://github.com/mjgiannelli" target="_blank"><button
+                                class="mark">Mark</button></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://github.com/JSheleg" target="_blank"><button
+                                class="jessica">Jessica</button></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://github.com/janekv20" target="_blank"><button
+                                class="jane">Jane</button></a>
+                    </div>
                 </div>
+            </div> --}}
+
+            
+        </footer>
+        
+        
+        {{#if loggedIn}}
+        <script src="/javascript/logout.js"></script>
+        {{/if}}     
+            
+    </body>
+
 </html>

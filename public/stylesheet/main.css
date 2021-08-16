@@ -10,24 +10,28 @@ body {
 }
 
 /*Header/Site title*/
-.header {
-  padding: 30px;
+header {
   text-align: center;
   background:#C70000;
   color: white;
 }
+.hero{
+  justify-content: center;
+  padding: 30px;
+}
 
-.header h1 {
+header h1 {
   font-size: 50px;
 }
 
-nav {
+.nav {
   overflow: hidden;
   background-color: #8FBC72;
   border: 1px solid black;
+  justify-content: flex-start;
 }
 
-nav a {
+.nav a {
   float: left;
   display: block;
   color:black;
@@ -60,3 +64,18 @@ nav a {
   width: 90px;
   height: 40px;
 }
+
+h2 {
+  text-align: center;
+}
+
+.github{
+  justify-content: center;
+}
+
+footer{
+  background-color: #C70000;
+  width: 100%;
+}
+
+
