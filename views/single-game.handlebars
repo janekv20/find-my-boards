@@ -5,7 +5,7 @@
 
 
 
-    <div class="game-card">
+    <div class="game-card justify-content-center">
         <div class="cont">
             <div class="title">
                 <p>{{game.category.category_name}}</p>
@@ -28,18 +28,45 @@
         </div>     
     </div>
 
-    {{!-- <div class="comments">
-    {{#each this}}
+    
+<div class = "comments-container">
+
+    <h1>SEE WHAT OTHERS ARE SAYING ABOUT THIS GAME!</h1>
+
+
+    <div class="comments">
+    {{!-- {{#each this}} --}}
     <section class="comment">
         <div class="meta">
         {{!-- {{user.username}} on {{created_at}} --}}
-        {{!-- lhauxwell6 on 8/16/2021 --}}
-        {{!-- </div>
+        lhauxwell6 on 8/16/2021
+        </div>
         <div class="text">
         {{!-- {{comment_text}} --}}
-        {{!-- This game is great! --}}
-        {{!-- </div>
+        This game is great!
+        </div>
     </section>
-    {{/each}}
-    </div> --}} 
+    {{!-- {{/each}} --}}
+    </div> 
+</div>
+
+    {{!-- {{#if loggedIn}} --}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+    <button type="button" class="upvote-btn">upvote</button>
+  </div>
+</form>
+{{!-- {{/if}} --}}
+
+{{!-- {{> comments post.comments}} --}}
+
+{{!-- {{#if loggedIn}} --}}
+<script src="/javascript/comment.js"></script>
+{{!-- <script src="/javascript/upvote.js"></script> --}}
+{{!-- {{/if}} --}}
 

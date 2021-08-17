@@ -10,6 +10,8 @@ body{
     justify-content: center;
     align-items: center;
     flex-flow: column;
+    background: #BFDBAE;
+
 }
 
 header{
@@ -25,8 +27,11 @@ header{
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    margin: 20px;
+    margin-left: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
 
 .game-card .cont{
     width: 85%;
@@ -73,6 +78,22 @@ header{
     /* width: 55%; */
     margin-top: 6px;
     text-align: center;
+}
+
+.comments{
+    background-color: #3471c1;
+    border-bottom: black 2px solid;
+}
+
+.comment-form{
+    align-items: center;
+    margin:2%;
+      
+}
+
+textarea{
+    width: 100%;
+    
 }
 
 
