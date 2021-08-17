@@ -45,13 +45,18 @@ router.get('/game/:id', (req,res) => {
       }
     ]
   })
+  
   .then(dbGameData => {
+    
+  
     if(!dbGameData) {
       res.status(404).json({message: 'No game found with this id'});
       return;
     }
 
     const game = dbGameData.get({plain:true});
+    console.log(game);
+    console.log(game.category.category_name)
 
     res.render('single-game', {
       game
