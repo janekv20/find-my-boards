@@ -17,6 +17,6 @@ router.use('/game', gameRoutes);
 
 router.use('/api', apiRoutes);
 
-router.use('/', profileRoutes)
+router.use('/profile', profileRoutes)
 
 module.exports = router;
