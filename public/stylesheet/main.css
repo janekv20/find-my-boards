@@ -41,6 +41,19 @@ header h1 {
   border-right: 1px solid black;
 }
 
+.carousel-item img {
+  max-height: 600px;
+  max-width: 400px;
+  margin: auto;
+  display: block;
+  background-color: #BFDBAE;
+}
+
+h3, p {
+  color: darkgreen;
+  font-weight: bolder;
+}
+
 .josh {
   background-color: orange;
   width: 90px;
