@@ -4,7 +4,7 @@ const { User } = require('../models');
 router.get('/profile/:id', (req, res) => {
     res.render('profile', {
       title: 'Profile',
-      style: 'dashboard.css'
+      style: 'profile.css'
     })
 })
 

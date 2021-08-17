@@ -9,20 +9,6 @@
     color: white;
   }
   
- body {
-    font-family: Garamond;
-    padding: 10px;
-    background: #BFDBAE;
-  }
-  
-  /*Header/Site title*/
-.header {
-    padding: 30px;
-    text-align: center;
-    background:#C70000;
-    color: white;
-  }
-  
 .header h1 {
     font-size: 50px;
   }
@@ -43,6 +29,15 @@ nav a {
     border-right: 1px solid black;
   }
   
+  body {
+    font-family: Garamond;
+    padding: 10px;
+    background: #BFDBAE;
+    margin-top:20px;
+    color: #1a202c;
+    text-align: left;
+  }
+  
   .josh {
     background-color: orange;
   }
@@ -58,7 +53,6 @@ nav a {
   .jane {
     background-color: magenta;
   }
-
 
 .main-body {
     padding: 15px;
