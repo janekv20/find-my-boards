@@ -1,21 +1,23 @@
 const { Game, Categories } = require('../models');
 const sequelize = require("../config/connection");
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
 // When the user navigates to the home page they are sent to the index.js file which routes them to this file
 // Then this file renders the homepage.handlebars template
 router.get('/', (req, res) => {
-
-  if(req.session.loggedIn) {
-  res.render('homepage',{
-    title: 'Home Page',
-    loggedIn: req.session.loggedIn
-  });
-} else {
-  res.redirect('/');
-  return;
-}
+ res.render('homepage',{
+  title: 'Home Page',
+  loggedIn: req.session.loggedIn
 });
+});
+
+router.get('/loggedin', withAuth, (req, res) => {
+  res.render('homepage',{
+   title: 'Home Page',
+   loggedIn: true
+ });
+ });
 
 router.get('/signup', (req, res) => {
 
