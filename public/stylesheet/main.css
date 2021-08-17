@@ -13,7 +13,6 @@ body {
 header {
   text-align: center;
   background:#C70000;
-  color: white;
 }
 .hero{
   justify-content: center;
@@ -31,14 +30,27 @@ header h1 {
   justify-content: flex-start;
 }
 
+.btn-success {
+  background-color: #8FBC72;
+  font-size: 3vw;
+}
+
+.btn-success:hover {
+  background-color: white;
+  color: black;
+}
+
 .nav a {
   float: left;
   display: block;
   color:black;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
-  border-right: 1px solid black;
+  border: 1px solid black;
+}
+
+.nav-item {
+  padding: 2vw;
 }
 
 .josh {
