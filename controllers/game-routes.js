@@ -55,7 +55,6 @@ router.get("/", (req, res) => {
   })
     .then((dbGameData) => {
       const games = dbGameData.map((game) => game.get({ plain: true }));
-      console.log(games);
       
       res.render("game", { 
         games,

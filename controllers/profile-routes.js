@@ -1,10 +1,9 @@
 const router = require('express').Router();
 const { User } = require('../models');
 
-router.get('/profile/:id', (req, res) => {
+router.get('/', (req, res) => {
     res.render('profile', {
       title: 'Profile',
-      style: 'profile.css'
     })
 })
 

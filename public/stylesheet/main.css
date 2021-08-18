@@ -54,8 +54,8 @@ header h1 {
 }
 
 .carousel-item img {
-  max-height: 600px;
-  max-width: 400px;
+  max-height: 800px;
+  max-width: 600px;
   margin: auto;
   display: block;
   background-color: #BFDBAE;
