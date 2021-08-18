@@ -1,4 +1,4 @@
-const { Game, Categories } = require('../models');
+const { Game, Categories, Comment, Rank, User } = require('../models');
 const sequelize = require("../config/connection");
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
@@ -63,7 +63,23 @@ router.get('/game/:id', (req,res) => {
       {
         model: Categories,
         attributes: ['id', 'category_name']
-      }
+      },
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "game_id", "user_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+      {
+        model: Rank,
+        attributes: ["id", "game_id", "user_id"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
     ]
   })
   
@@ -76,8 +92,6 @@ router.get('/game/:id', (req,res) => {
     }
 
     const game = dbGameData.get({plain:true});
-    console.log(game);
-    console.log(game.category.category_name)
 
     res.render('single-game', {
       game,
