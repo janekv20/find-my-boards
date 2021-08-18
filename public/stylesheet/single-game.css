@@ -45,13 +45,21 @@ header {
     border: 2px solid black;
 }
 
+.game-card .cont .single{
+    background-color: orange;
+}
+
+.game-card .cont .single p{
+    color: black;
+}
+
 /* .title:nth-child(2){
     background-color: Orange;
 } */
 
-.title:nth-child(odd){
+/* .title .test:nth-child(2){
     background-color: orange;
-}
+} */
 
 
 
