@@ -36,22 +36,10 @@ router.get('/profile', (req, res) => {
   .then((dbUserData) => {
     
     const user = dbUserData.get({ plain: true });
-    let games = []
-
-    for (i=0; i < user.ranks.length; i++) {
-      games.push(user.ranks[i].game.game_name)
-    }
-
-    console.log(games)
-
-    console.log('user')
-    console.log(user)
-    console.log('this is another user')
-    console.log(user.ranks[0].game.game_name)
+    
     res.render('profile', {
       title: 'Profile',
       user,
-      games,
       loggedIn: req.session.loggedIn
   });
 })
