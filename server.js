@@ -4,8 +4,10 @@ const fileUpload = require('express-fileupload')
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-
 const app = express();
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers })
+
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/connection');
@@ -24,6 +26,7 @@ const sess = {
 app.use(session(sess));
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
