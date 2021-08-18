@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../models');
 
-router.get('/', (req, res) => {
+router.get('/profile', (req, res) => {
     res.render('profile', {
       title: 'Profile',
     })
@@ -10,8 +10,6 @@ router.get('/', (req, res) => {
 // create a route to download a photo to the upload folder
 router.post('', (req, res) => {
 
-    const id = req.headers.referer.toString().split('/')[req.headers.referer.toString().split('/').length - 1]
-   
     // we will call a variable with the same name of the input field on the form in profile handlebars file
     let profilePic;
     let uploadPath;
@@ -35,7 +33,7 @@ router.post('', (req, res) => {
       User.update(
           {image: profilePic.name},
           {where: {
-              id: id
+              id: req.session.user_id
           }}
       )
       res.redirect('back');
