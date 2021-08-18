@@ -1,21 +1,35 @@
 
+<link rel="stylesheet" href="/stylesheet/game.css">
 
+<div class = "container"></div>
+<div class = "row">
 
-{{#each games}}
-<div class="card" style="width: 18rem;">
-  {{!-- <img src="..." class="card-img-top" alt="..."> --}}
-  <div class="card-body">
-    <h5 class="card-title">{{game_name}}</h5>
-    <p class="card-text">{{game_description}}</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Comments: {{comments.length}} </li>
-    <li class="list-group-item">Votes:</li>
-  </ul>
-  <div class="card-body">
-    <a href="/game/{{id}}" class="card-link">See More Information</a>
+    {{#each games}}
+    <div class = "col-md">
+    <div class="game-card mx-auto">
+        <div class="cont">
+            <div class="title">
+                <h5>{{game_name}}</h5>
+            </div>
+            <p id="play-details"><b>Description</b></p>
+            <div class="details">
+                <div class="game-description">
+                    {{game_description}}
+                </div>
+                <div class="game-info">
+                    <p>Comments: {{comments.length}}</p>
+                    <p>Favorites: {{rank.length}} 0 <i class="fas fa-heart"></i></p>
+                </div>
+                <div class="game-link">
+                  <a href="/game/{{id}}" class="card-link">See More Information</a>
+                </div>   
+            </div>
+        </div>     
+    </div>
+
+    </div>
+    
+    {{/each}}
   </div>
 </div>
-{{/each}}
-
 
