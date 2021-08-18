@@ -1,24 +1,39 @@
-<section="login-logout">
-<div class="row">
-	<div class="column">
-		<form action="#">
-			<h1>Sign in</h1>
-			<input type="email" id="email-login" placeholder="Email" />
-			<input type="password" id="password-login" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button id="sign-in">Sign In</button>
-		</form>
-	</div>
+<br />
+<section class="w-25 mx-auto text-white">
+  <h1 class="text-center text-danger">Sign in</h1>
 
-  <div class="column">
-		  <form action="#">
-        <h1>Sign Up</h1>
-        <input type="username" id="username-signup" placeholder="Username" />
-        <input type="email" id="email-signup" placeholder="Email" />
-        <input type="password" id="password-signup" placeholder="Password" />
-			  <button id="sign-up">Sign Up</button>
-		  </form>
-	  </div>
-  </div>
+  <form class="login-form">
+	  
+    <div class="form-group">
+      <label for="email-login">E-mail:</label>
+      <input
+        type="text"
+        id="email-login"
+        class="form-control"
+        placeholder="Email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password-login">Password:</label>
+      <input
+        type="password"
+        id="password-login"
+        class="form-control"
+        placeholder="Password"
+      />
+    </div>
+
+    <div class="login-form">
+      <button type="submit" class="btn btn-danger btn-block">Login</button>
+    </div>
+    
+    <br />
+    <div class="login-form">
+      <button type="submit" class="btn btn-danger btn-block">Forgot My Password</button>
+    </div>
+  </form>
 </section>
+<br />
+
 <script src="/javascript/login.js"></script>
