@@ -7,7 +7,7 @@
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="/images/avatar.png" alt="Profile Pic">
-                    <h1>{{Username}}</h1>
+                    <h1>{{user.username}}</h1>
                     <form id='profile-pic-form' action="/" method="POST" encType="multipart/form-data">
                     <h6>Upload Profile Picture</h6>
                     <input type='file' name='profilePic' accept="image/*" id='profile-pic'/>
@@ -23,39 +23,48 @@
       <div class="col-sm-6 mb-3">
         <div class="card h-100">
           <div class="card-body">
-            <h4>Upvoted Games</h4>
-            <p>{{Rank}}</p>
+            <h4>Following</h4>
+            <p>{{user.followings}}</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row gutters-sm">
-      <div class="col-sm-6 mb-3">
-        <div class="card h-100">
+      <div class="col-md-8">
+        <div class="card mb-3">
           <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+            <h4>Upvoted Games</h4>
+            {{#each games}}
+            <p>{{games}}</p>
+            {{/each}}
+              </div>
+            </div>
+         </div>
+        </div>
+      </div>
+  
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
             <h4>Your Comments</h4>
-            <p>{{Comment}}</p>
+            <p>{{user.comments}}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-          
-    <div class="row gutters-sm">
-      <div class="col-sm-6 mb-3">
-        <div class="card h-100">
-          <div class="card-body">
-            <h4>Your Friends</h4>
-            <p></p>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
   </div>
 </div>
 
-          
+  {{#if loggedIn}}
+      <script src="/javascript/profile.js" defer></script>
+    {{/if}}         
           
           
         

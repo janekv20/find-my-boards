@@ -63,7 +63,7 @@ nav a {
 
 .card {
     position: relative;
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;

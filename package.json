@@ -15,6 +15,7 @@
     "express-session": "^1.17.2",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.0",
+    "nodemon": "^2.0.12",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {},
