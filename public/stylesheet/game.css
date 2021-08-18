@@ -1,66 +1,105 @@
 *{
-    box-sizing: border-box;
-  }
-
-  .header {
-    padding: 30px;
-    text-align: center;
-    background:#C70000;
-    color: white;
-  }
-  
-body {
-    font-family: Garamond;
-    padding: 10px;
-    background: #BFDBAE;
-  }
-
-.main{
-  flex-wrap: wrap;
-  flex-direction: row;
+    margin: 0;
+    padding: 0;
 }
-  
-  /*Header/Site title*/
-.header {
-    padding: 30px;
+
+header {
+    width: 100%;
+}
+
+.game-card{
+    background: white;
+    width: 550px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    margin-left: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.game-card .cont{
+    width: 85%;
+    height: 85%;
+    border: 2px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.game-card .cont .title{
+    width: 100%;
+    height: 25%;
+    background-color: #3471c1;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    background:#C70000;
-    color: white;
-  }
-  
-.header h1 {
-    font-size: 50px;
-  }
-  
-nav {
-    overflow: hidden;
-    background-color: #8FBC72;
-    border: 1px solid black;
-  }
-  
-nav a {
-    float: left;
-    display: block;
-    color:black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    border-right: 1px solid black;
-  }
-  
-  .josh {
+    justify-content: center;
+    text-transform: uppercase;
+    border: 2px solid black;
+}
+
+.game-card .cont .single{
     background-color: orange;
+}
+
+.game-card .cont .single p{
+    color: black;
+}
+
+/* .title:nth-child(2){
+    background-color: Orange;
+} */
+
+/* .title .test:nth-child(2){
+    background-color: orange;
+} */
+
+
+
+.game-card .cont #play-details{
+    margin-top: 10px;
+}
+
+.game-card .cont .details{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+
+.game-card .cont .details .game-info{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: bold;
+    margin: 1px;
+}
+
+.game-card .cont .game-description{
+    /* width: 55%; */
+    margin-top: 6px;
+    text-align: center;
+}
+
+textarea {
+    max-width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #C70000;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
   }
-  
-  .mark {
-    background-color: green;
-  }
-  
-  .jessica {
-    background-color: yellow;
-  }
-  
-  .jane {
-    background-color: magenta;
-  }
-  
+
+.game-link a{
+    justify-content: center;
+}
