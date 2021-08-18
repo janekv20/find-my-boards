@@ -80,7 +80,8 @@ router.get('/game/:id', (req,res) => {
     console.log(game.category.category_name)
 
     res.render('single-game', {
-      game
+      game,
+      loggedIn: req.session.loggedIn
     });
   })
   .catch(err => {

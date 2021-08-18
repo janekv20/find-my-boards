@@ -1,11 +1,6 @@
-
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="/stylesheet/single-game.css">
 
-
-
-    <div class="game-card justify-content-center">
+    <div class="game-card justify-content-center mx-auto">
         <div class="cont">
             <div class="title">
                 <p>{{game.category.category_name}}</p>
@@ -32,7 +27,8 @@
 <div class = "comments-container">
 
     <h1>SEE WHAT OTHERS ARE SAYING ABOUT THIS GAME!</h1>
-    <h3><i class="fas fa-heart"></i>   Favorites: 4</h3>
+    <h3>Favorites: 4</h3>
+    <button type="button" class="btn btn-danger"><i class="fas fa-heart"></i></button>
     {{!-- {{vote_count} --}}
 
 
@@ -54,16 +50,17 @@
 </div>
 
     {{!-- {{#if loggedIn}} --}}
+    <div class="mx-auto w-100">
 <form class="comment-form">
-  <div>
     <textarea name="comment-body"></textarea>
-  </div>
 
-  <div>
-    <button type="submit">add comment</button>
-    <button type="button" class="upvote-btn">upvote</button>
+  <div class="mx-auto">
+    <button type="submit" class="btn btn-info"><i class="fas fa-comments"></i></button>
+    
   </div>
 </form>
+</div>
+<br>
 {{!-- {{/if}} --}}
 
 {{!-- {{> comments post.comments}} --}}
