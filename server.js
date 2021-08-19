@@ -14,7 +14,7 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: 'super secret secret',
+  secret:process.env.SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -55,6 +55,6 @@ app.use(function(req, res, next) {
   // res.type('txt').send('Not found');
 });
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
 });
