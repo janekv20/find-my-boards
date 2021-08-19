@@ -15,6 +15,13 @@
     {{#each game.ranks}}
    <a class="btn btn-info mx-auto" href="../profile/{{user_id}}">{{user.username}}</a>
     <br>
+
+  {{!-- {{#if user.image}}
+  <img src="/images/{{user.image}}" alt="Profile Pic" width="150">
+  {{else}}
+  <img src="/images/avatar.png" alt="Profile Pic" width="150">
+  {{/if}} --}}
+
     {{/each}}
   </div>
 </div>

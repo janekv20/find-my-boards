@@ -48,7 +48,7 @@ router.get("/", (req, res) => {
         attributes: ["id", "game_id", "user_id"],
         include: {
           model: User,
-          attributes: ["username"],
+          attributes: ["username", "image"],
         },
       },
     ],
