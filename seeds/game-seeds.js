@@ -51,6 +51,56 @@ const gameData = [
     game_description:
       " Stem into the world of fairy tales. It's full of wicked queens, talking cauldrons and lucky boys who stumble upon magic objects, but unlike normal fairy tales, you control the action.",
   },
+  {
+    game_name: "Sprit Island",
+    category_id: 2,
+    min_number_of_players: 1,
+    max_number_of_players: 4,
+    avg_min_game_time: 90,
+    avg_max_game_time: 120,
+    game_description:
+      "In the most distant reaches of the world, magic still exists, embodied by spirits of the land, of the sky, and of every natural thing. As the great powers of Europe stretch their colonial empires further and further, they will inevitably lay claim to a place where spirits still hold power - and when they do, the land itself will fight back alongside the islanders who live there.",
+  },
+  {
+    game_name: "Scythe",
+    category_id: 2,
+    min_number_of_players: 1,
+    max_number_of_players: 5,
+    avg_min_game_time: 90,
+    avg_max_game_time: 115,
+    game_description:
+      "It is a time of unrest in 1920s Europa. The ashes from the first great war still darken the snow. The capitalistic city-state known simply as “The Factory”, which fueled the war with heavily armored mechs, has closed its doors, drawing the attention of several nearby countries.",
+  },
+  {
+    game_name: "Root",
+    category_id: 2,
+    min_number_of_players: 2,
+    max_number_of_players: 4,
+    avg_min_game_time: 60,
+    avg_max_game_time: 90,
+    game_description:
+      "Root is a game of adventure and war in which 2 to 4 (1 to 6 with the 'Riverfolk' expansion) players battle for control of a vast wilderness.",
+  },
+  {
+    game_name: "Wingspan",
+    category_id: 2,
+    min_number_of_players: 1,
+    max_number_of_players: 5,
+    avg_min_game_time: 40,
+    avg_max_game_time: 70,
+    game_description:
+      "Wingspan is a competitive, medium-weight, card-driven, engine-building board game from Stonemaier Games. It's designed by Elizabeth Hargrave and features over 170 birds illustrated by Beth Sobel, Natalia Rojas, and Ana Maria Martinez.",
+  },
+  {
+    game_name: "Root",
+    category_id: 2,
+    min_number_of_players: 2,
+    max_number_of_players: 2,
+    avg_min_game_time: 120,
+    avg_max_game_time: 180,
+    game_description:
+      "Now the trumpet summons us again, not as a call to bear arms, though arms we need; not as a call to battle, though embattled we are – but a call to bear the burden of a long twilight struggle",
+  },
   //data used to create a new game
   // {
   //     game_name: "Clue",
