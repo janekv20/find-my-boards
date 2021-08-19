@@ -40,7 +40,58 @@ router.get('/profile', (req, res) => {
       res.render('profile', {
         title: 'Profile',
         user,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        user_id: req.session.user_id
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    })
+})
+
+
+router.get('/profile/:id', (req, res) => {
+  User.findOne({
+    attributes: { exclude: ["password"] },
+    where: {
+      id: req.params.id
+    },
+    include: [
+      // comments and all their attributes and include game names they commented on
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "created_at"],
+        include: {
+          model: Game,
+          attributes: ["game_name"],
+        },
+      },
+      // games attribute name through rank as ranked games
+      {
+        model: Rank,
+        attributes: ["id", "user_id", "game_id"],
+        include: {
+          model: Game,
+          attributes: ["game_name"],
+        },
+      },
+      {
+        model: Following,
+        attributes: ['id', 'following_username'],
+      },
+    ]
+  })
+
+    .then((dbUserData) => {
+
+      const user = dbUserData.get({ plain: true });
+
+      res.render('profile', {
+        title: 'Profile',
+        user,
+        loggedIn: req.session.loggedIn,
+        user_id: req.session.user_id
       });
     })
     .catch((err) => {

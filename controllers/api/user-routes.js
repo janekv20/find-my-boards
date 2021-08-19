@@ -14,6 +14,51 @@ router.get("/", (req, res) => {
     });
 });
 
+//get user data by username
+router.get('/username/:username', (req, res) => {
+  User.findOne({
+    attributes: { exclude: ["password"] },
+    where: {
+      username: req.params.username
+    },
+    include: [
+      // comments and all their attributes and include game names they commented on
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "created_at"],
+        include: {
+          model: Game,
+          attributes: ["game_name"],
+        },
+      },
+      // games attribute name through rank as ranked games
+      {
+        model: Rank,
+        attributes: ["id", "user_id", "game_id"],
+        include: {
+          model: Game,
+          attributes: ["game_name"],
+        },
+      },
+      {
+        model: Following,
+        attributes: ['id', 'following_username'],
+      },
+    ]
+  })
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(404).json({ message: "No user found with this username" });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
+
 //GET /api/users/1
 router.get("/:id", (req, res) => {
   User.findOne({
