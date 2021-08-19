@@ -37,7 +37,8 @@
           <div class="row">
             <div class="col-sm-12">
               {{#each user.ranks}}
-              <p style="color: black">{{game.game_name}}</p>
+              <a href='/game/{{game_id}}' style="color: black">{{game.game_name}}</a>
+              <br>
               {{/each}}
             </div>
           </div>
@@ -66,5 +67,5 @@
   </div>
 
   {{#if loggedIn}}
-  <script src="/javascript/profile.js" defer></script>
+  {{!-- <script src="/javascript/profile.js" defer></script> --}}
   {{/if}}
