@@ -1,78 +1,70 @@
 <div class="container">
-    <div class="main-body">
-      
-      <div class="row gutters-sm">
-        
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <div class="d-flex flex-column align-items-center text-center">
-                <img src="/images/avatar.png" alt="Profile Pic" width="150">
-                  <div class="mt-3">
-                    <h2>{{user.username}}</h2>
-                    <form id='profile-pic-form' action="/" method="POST" encType="multipart/form-data">
-                    <h6>Upload Profile Picture</h6>
-                    <input type='file' name='profilePic' accept="image/*" id='profile-pic'/>
-                    <input type="submit" class='bnt'>
-                    </form>
-                  </div>
+  <div class="main-body">
+
+    <div class="row gutters-sm">
+
+      <div class="col-md-4 mb-3">
+        <div class="card" style="background-color: #BFDBAE;">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              {{#if user.image}}
+              <img src="/images/{{user.image}}" alt="Profile Pic" width="150">
+              {{else}}
+              <img src="/images/avatar.png" alt="Profile Pic" width="150">
+              {{/if}}
+              <div class="mt-3">
+                <h2>{{user.username}}</h2>
+                <form id='profile-pic-form' action="/" method="POST" encType="multipart/form-data">
+                  <h6>Change Profile Picture</h6>
+                  <input type='file' name='profilePic' accept="image/*" id='profile-pic' />
+                  <input type="submit" class='bnt'>
+                </form>
               </div>
             </div>
           </div>
-        <div class="card mt-3">
-          <h3>Users You Are Following</h3>
-            {{#each user.followings}}
-            <p></p>
-            {{/each}}
-          </div>
+        </div>
+
       </div>
 
       <div class="col-md-8">
-        <div class="card mb-3">
-          <div class="card-body">
+        <div class="card mb-3" style="background-color: #BFDBAE;">
+          <div class="card-body" style="background-color: darkgreen">
             <div class="row">
-                  <h3>Upvoted Games</h3>
-              </div>
+              <h3 style="color:white">Upvoted Games</h3>
             </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-12">
-                  {{#each user.ranks}}
-                  <p>{{game.game_name}}</p>
-                  {{/each}}
-                </div>
-              </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              {{#each user.ranks}}
+              <p style="color: black">{{game.game_name}}</p>
+              {{/each}}
+            </div>
           </div>
         </div>
-            
+      </div>
+
       <div class="col-md-8">
-        <div class="card mb-3">
-          <div class="card-body">
+        <div class="card mb-3" style="background-color: #BFDBAE;">
+          <div class="card-body" style="background-color: darkgreen;">
             <div class="row gutters-sm">
-                <h3>Your Comments</h3>
-              </div>
+              <h3 style="color:white">Your Comments</h3>
             </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-12">
-                 {{#each user.comments}}
-                <p>{{game.game_name}}: <q>{{comment_text}}</q></p>
-                
-                {{/each}}
-              </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              {{#each user.comments}}
+              <p style="color:black">{{game.game_name}}: <q>{{comment_text}}</q></p>
+
+              {{/each}}
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 
   {{#if loggedIn}}
-      <script src="/javascript/profile.js" defer></script>
-    {{/if}}         
-          
-        
-        
-     
-
-
-
+  <script src="/javascript/profile.js" defer></script>
+  {{/if}}

@@ -33,54 +33,64 @@ router.get('/profile', (req, res) => {
     ]
   })
 
-  .then((dbUserData) => {
-    
-    const user = dbUserData.get({ plain: true });
-    
-    res.render('profile', {
-      title: 'Profile',
-      user,
-      loggedIn: req.session.loggedIn
-  });
-})
-.catch((err) => {
-  console.log(err);
-  res.status(500).json(err);
-})
+    .then((dbUserData) => {
 
+      const user = dbUserData.get({ plain: true });
+
+      res.render('profile', {
+        title: 'Profile',
+        user,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    })
 })
 
 // create a route to download a photo to the upload folder
 router.post('', (req, res) => {
 
-    // we will call a variable with the same name of the input field on the form in profile handlebars file
-    let profilePic;
-    let uploadPath;
+  // we will call a variable with the same name of the input field on the form in profile handlebars file
+  let profilePic;
+  let uploadPath;
+
+  // If no files were uploaded send message to user saying so						
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.')
+  }
+
+  // if user uploads a file						
+  // get file object and get move function from object						
+  profilePic = req.files.profilePic;
+
+  // update dirname path to remove controllers so we can upload picture to the public/images folder
+  const dirnamePathArray = __dirname.toString().split('\\')
+
+  const updatedDirnamePathArray = dirnamePathArray.filter( item => item != 'controllers');
+
+  const finalDirnamePath = updatedDirnamePathArray.join('\\')
+
+  // create an upload path that we will pass into the move funciton or mv()	
+  uploadPath = finalDirnamePath + '/public/images/' + profilePic.name;
   
-    // If no files were uploaded send message to user saying so						
-    if (!req.files || Object.keys(req.files).length === 0) {
-      return res.status(400).send('No files were uploaded.')
-    }
-  
-    // if user uploads a file						
-    // get file object and get move function from object						
-    profilePic = req.files.profilePic;
-  
-    // create an upload path that we will pass into the move funciton or mv()	
-    uploadPath = __dirname + '/profile-pics/' + profilePic.name;
-    // use mv() to place file on the server. Will move it to the directory we created on line 39 of this doc which moves it to the upload folder						
-    profilePic.mv(uploadPath, function (err) {
-      if (err) return res.status(500).send(err);
-      
-      //updates the user's image key to the value of the name of the file
-      User.update(
-          {image: profilePic.name},
-          {where: {
-              id: req.session.user_id
-          }}
-      )
-      res.redirect('back');
-    });
+  // use mv() to place file on the server. Will move it to the directory we created on line 39 of this doc which moves it to the upload folder						
+  profilePic.mv(uploadPath, function (err) {
+    if (err) return res.status(500).send(err);
+
+    //updates the user's image key to the value of the name of the file
+    User.update(
+      { image: profilePic.name },
+      {
+        where: {
+          id: req.session.user_id
+        }
+      }
+    )
+    setTimeout(function() {
+      res.redirect('back')}, 500);
   });
+});
 
 module.exports = router;
