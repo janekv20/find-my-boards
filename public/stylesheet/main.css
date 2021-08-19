@@ -5,7 +5,6 @@
 
 body {
   font-family: Garamond;
-  padding: 10px;
   background: #BFDBAE;
 }
 
@@ -13,10 +12,11 @@ body {
 header {
   text-align: center;
   background:#C70000;
+  width: 100%
 }
 .hero{
   justify-content: center;
-  padding: 30px;
+  width: 100%;
 }
 
 header h1 {
@@ -28,6 +28,7 @@ header h1 {
   background-color: #8FBC72;
   border: 1px solid black;
   justify-content: flex-start;
+  width:100%;
 }
 
 .btn-success {
@@ -54,8 +55,8 @@ header h1 {
 }
 
 .carousel-item img {
-  max-height: 800px;
-  max-width: 600px;
+  max-height: 600px;
+  max-width: 450px;
   margin: auto;
   display: block;
   background-color: #BFDBAE;

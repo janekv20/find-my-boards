@@ -1,10 +1,53 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Comment, Rank, Game, Following } = require('../models');
 
 router.get('/profile', (req, res) => {
+  User.findOne({
+    attributes: { exclude: ["password"] },
+    where: {
+      id: req.session.user_id
+    },
+    include: [
+      // comments and all their attributes and include game names they commented on
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "created_at"],
+        include: {
+          model: Game,
+          attributes: ["game_name"],
+        },
+      },
+      // games attribute name through rank as ranked games
+      {
+        model: Rank,
+        attributes: ["id", "user_id", "game_id"],
+        include: {
+          model: Game,
+          attributes: ["game_name"],
+        },
+      },
+      {
+        model: Following,
+        attributes: ['id', 'following_username'],
+      },
+    ]
+  })
+
+  .then((dbUserData) => {
+    
+    const user = dbUserData.get({ plain: true });
+    
     res.render('profile', {
       title: 'Profile',
-    })
+      user,
+      loggedIn: req.session.loggedIn
+  });
+})
+.catch((err) => {
+  console.log(err);
+  res.status(500).json(err);
+})
+
 })
 
 // create a route to download a photo to the upload folder
