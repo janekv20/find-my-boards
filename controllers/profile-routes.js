@@ -40,7 +40,8 @@ router.get('/profile', (req, res) => {
       res.render('profile', {
         title: 'Profile',
         user,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        user_id: req.session.user_id
       });
     })
     .catch((err) => {
@@ -89,7 +90,8 @@ router.get('/profile/:id', (req, res) => {
       res.render('profile', {
         title: 'Profile',
         user,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        user_id: req.session.user_id
       });
     })
     .catch((err) => {

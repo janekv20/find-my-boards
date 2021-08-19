@@ -120,3 +120,11 @@ footer{
       margin-bottom: 1rem;
 }
 
+#follow-user-div {
+  margin-top: .5rem;
+}
+
+#follow-btn {
+  border: .1rem solid black;
+}
+

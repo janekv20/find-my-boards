@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
   //check the session
   Following.create({
     following_username: req.body.following_username,
-    user_id: req.body.user_id
+    user_id: req.session.user_id
   })
     .then(dbFollowingData => res.json(dbFollowingData))
     .catch(err => {

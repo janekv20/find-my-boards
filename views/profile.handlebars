@@ -13,19 +13,30 @@
               <img src="/images/avatar.png" alt="Profile Pic" width="150">
               {{/if}}
               <div class="mt-3">
-                <h2>{{user.username}}</h2>
+                <h2 id='profile-username'>{{user.username}}</h2>
                 <form id='profile-pic-form' action="/" method="POST" encType="multipart/form-data">
                   <h6>Change Profile Picture</h6>
                   <input type='file' name='profilePic' accept="image/*" id='profile-pic' />
                   <input type="submit" class='bnt'>
+                  <div id='follow-user-div'>
+
+                  </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
+      {{!-- {{#if user_id}}
+      <div>
+        <p>Hello there visitor</p>
+      </div>
+      {{else}}
+      <div>
+        <p>Hello there {{user.username}}</p>
+      </div>
+      {{/if}} --}}
       <div class="col-md-8">
         <div class="card mb-3" style="background-color: #BFDBAE;">
           <div class="card-body" style="background-color: darkgreen">
