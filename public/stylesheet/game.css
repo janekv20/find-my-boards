@@ -125,3 +125,11 @@ textarea {
     justify-content: center;
     margin: 0, auto;
 }
+
+.pagination {
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+  }
