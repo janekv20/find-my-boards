@@ -108,4 +108,15 @@ footer{
   position:sticky;
 }
 
+.following-btn {
+  background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-size: 2rem;
+      transition: color .1s;
+      margin-bottom: 1rem;
+}
 
