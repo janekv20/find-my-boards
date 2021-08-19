@@ -1,107 +1,135 @@
 <div class="container">
-  <div class="main-body">
 
-    <div class="row gutters-sm">
+  <div class="row">
 
-      <div class="col-md-4 mb-3">
-        <div class="card" style="background-color: #BFDBAE;">
-          <div class="card-body">
-            <div class="d-flex flex-column align-items-center text-center">
-              {{#if user.image}}
-              <img src="/images/{{user.image}}" alt="Profile Pic" width="150">
-              {{else}}
-              <img src="/images/avatar.png" alt="Profile Pic" width="150">
-              {{/if}}
-              <div class="mt-3">
-                <h2 id='profile-username'>{{user.username}}</h2>
-                <form id='profile-pic-form' action="/" method="POST" encType="multipart/form-data">
-                  <h6>Change Profile Picture</h6>
-                  <input type='file' name='profilePic' accept="image/*" id='profile-pic' />
-                  <input type="submit" class='bnt'>
-                  <div id='follow-user-div'>
+    <div class="col-4">
+      <div class="card" style="background-color: #BFDBAE;">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center text-center">
+            {{#if user.image}}
+            <img src="/images/{{user.image}}" alt="Profile Pic" width="150">
+            {{else}}
+            <img src="/images/avatar.png" alt="Profile Pic" width="150">
+            {{/if}}
+            <div class="mt-3">
+              <h2 id='profile-username'>{{user.username}}</h2>
 
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              {{#if (eq user_id user.id) }}
 
-      {{!-- {{#if user_id}}
-      <div>
-        <p>Hello there visitor</p>
-      </div>
-      {{else}}
-      <div>
-        <p>Hello there {{user.username}}</p>
-      </div>
-      {{/if}} --}}
-      <div class="col-md-8">
-        <div class="card mb-3" style="background-color: #BFDBAE;">
-          <div class="card-body" style="background-color: darkgreen">
-            <div class="row">
-              <h3 style="color:white">Upvoted Games</h3>
-            </div>
-          </div>
+              <form id='profile-pic-form' action="/" method="POST" encType="multipart/form-data">
+                <h6>Change Profile Picture</h6>
+                <input type='file' name='profilePic' accept="image/*" id='profile-pic' />
+                <input type="submit" class='bnt'>
 
-          <div class="row">
-            <div class="col-sm-12">
-              {{#each user.ranks}}
-              <a href='/game/{{game_id}}' style="color: black">{{game.game_name}}</a>
-              <br>
-              {{/each}}
-            </div>
-          </div>
-        </div>
-      </div>
+                {{else}}
+                <div id='follow-user-div'> </div>
+                {{/if}}
 
-      <div class="col-md-8">
-        <div class="card mb-3" style="background-color: #BFDBAE;">
-          <div class="card-body" style="background-color: darkgreen;">
-            <div class="row gutters-sm">
-              <h3 style="color:white">Your Comments</h3>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-12">
-              {{#each user.comments}}
-              <p style="color:black">{{game.game_name}}: <q>{{comment_text}}</q></p>
-
-              {{/each}}
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-8">
-          <div class="card mb-3" style="background-color: #BFDBAE;">
-            <div class="card-body" style="background-color: darkgreen;">
-              <div class="row gutters-sm">
-                <h3 style="color:white">Following</h3>
-              </div>
-            </div>
-
-            <div class="row">
-              {{#each user.followings}}
-              <div class="col-sm-5">
-                <button onclick='followingBtnHandler(this)' class='following-btn'><span style='opacity:0'
-                    id='follow-id'>{{id}}</span>{{following_username}}</button>
-                <br>
-              </div>
-              <div id='unfollow-btn-div-{{id}}' class='col-sm-5'>
-              </div>
-              {{/each}}
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    {{#if loggedIn}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="/javascript/profile.js" defer></script>
-    {{/if}}
+
+    <div class="col-4">
+      <div class="card mb-3" style="background-color: #BFDBAE;">
+        <div class="card-body text-center btn" id="favorite-button" style="background-color: darkgreen">
+          <h3 style="color:white">Favorite Games</h3>
+        </div>
+
+        <div class=" text-center">
+          <ul class="list-group" id="favorite-game-list">
+
+            {{#each user.ranks}}
+
+
+            <a href='/game/{{game_id}}' style="text-decoration: none;">
+              <li class="list-group-item list-group-item-action list-group-item-danger">
+                <h4><b>{{game.game_name}}</b></h4>
+              </li>
+            </a>
+            {{/each}}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-4">
+      <div class="card mb-3" style="background-color: #BFDBAE;">
+        <div class="card-body text-center btn" id="comment-button" style="background-color: darkgreen;">
+          <h3 style="color:white">Your Comments</h3>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center">
+            <ul class="list-group" id="comment-list">
+              {{#each user.comments}}
+
+
+              <li class="list-group-item list-group-item-action list-group-item-info">
+                <h4>{{game.game_name}}: <i>"{{comment_text}}"</i></h4>
+              </li>
+
+              {{/each}}
+            </ul>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card mb-3" style="background-color: #BFDBAE;">
+        <div class="card-body btn" id="follow-button" style="background-color: darkgreen;">
+          <div class="row align-items-center">
+            <h3 class="mx-auto" style="color:white">Following</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          {{#each user.followings}}
+          <div class="col-sm-5">
+            <button onclick='followingBtnHandler(this)' class='following-btn'><span style='opacity:0'
+                id='follow-id'>{{id}}</span>{{following_username}}</button>
+            <br>
+          </div>
+          <div id='unfollow-btn-div-{{id}}' class='col-sm-5'>
+          </div>
+          {{/each}}
+        </div>
+
+        <div class="text-center">
+          <ul class="list-group" id="following-list">
+
+            {{#each user.followings}}
+            <button onclick='followingBtnHandler(this)' class='following-btn '>
+              <li class="list-group-item list-group-item-action list-group-item-primary"><span style='opacity:0'
+                  id='follow-id'>{{id}}</span>{{following_username}}</li>
+            </button>
+            <div id='unfollow-btn-div-{{id}}' class='col-sm-5'>
+            </div>
+
+            {{/each}}
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{{#if loggedIn}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script src="/javascript/profile.js" defer></script>
+{{/if}}

@@ -1,3 +1,5 @@
+const { User } = require("../models");
+
 module.exports = {
     format_date: (date) => {
       return `${new Date(date).getMonth() + 1}/${new Date(
@@ -18,5 +20,14 @@ module.exports = {
         .split("/")[0]
         .split("?")[0];
     },
+    eq: (userLoggedIn, loggedInId) => {
+      
+      if (userLoggedIn === loggedInId) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
   
     }

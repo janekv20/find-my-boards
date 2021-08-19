@@ -54,10 +54,6 @@ nav a {
     background-color: magenta;
   }
 
-.main-body {
-    padding: 15px;
-}
-
 .card {
     position: sticky;
     display: inline-block;
@@ -76,21 +72,5 @@ h3 {
 
 p {
   color: black;
-}
-
-.card-body {
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1rem;
-}
-
-.gutters-sm {
-    margin-right: -8px;
-    margin-left: -8px;
-}
-
-.gutters-sm>.col, .gutters-sm>[class*=col-] {
-    padding-right: 8px;
-    padding-left: 8px;
 }
 
