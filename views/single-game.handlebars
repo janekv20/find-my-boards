@@ -1,72 +1,88 @@
-<link rel="stylesheet" href="/stylesheet/single-game.css">
+<link rel="stylesheet" href="/stylesheet/game.css" />
+<br />
+<div class="game-card mx-auto">
+  <div class="cont">
+    <div class="title single">
+      <p>{{game.category.category_name}}</p>
+      <h2>{{game.game_name}}</h2>
+    </div>
+    <p id="play-details"><b>Game Details</b></p>
+    <div class="details">
+      <div class="game-info">
+        <p>Players</p>
+        <p>{{game.min_number_of_players}}-{{game.max_number_of_players}}</p>
+      </div>
+      <div class="game-info">
+        <p>Average Game Time</p>
+        <p>{{game.avg_min_game_time}}-{{game.avg_max_game_time}}</p>
+      </div>
+      <div class="game-description">
+        {{game.game_description}}
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div class="card mx-auto button-container">
 
-    <div class="game-card justify-content-center mx-auto">
-        <div class="cont">
-            <div class="title">
-                <p>{{game.category.category_name}}</p>
-                <h2>{{game.game_name}}</h2>
-            </div>
-            <p id="play-details"><b>Game Details</b></p>
-            <div class="details">
-                <div class="game-info">
-                    <p>Players</p>
-                    <p>{{game.min_number_of_players}}-{{game.max_number_of_players}}</p>
-                </div>
-                <div class="game-info">
-                    <p>Average Game Time</p>
-                    <p>{{game.avg_min_game_time}}-{{game.avg_max_game_time}}</p>
-                </div>
-                <div class="game-description">
-                    {{game.game_description}}
-                </div>
-            </div>
-        </div>     
+  <button type="button" class="upvote-btn btn btn-danger">{{game.ranks.length}}<br /><i
+      class="fas fa-heart"
+    ></i></button>
+
+  {{!-- {{#if loggedIn}} --}}
+    <div class="dropdown">
+      <button
+        type="button"
+        class="btn btn-info dropdown-toggle"
+        id="dropdownMenu2"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >{{game.comments.length}}<br /><i class="fas fa-comments"></i></button>
+      <div class="dropdown-menu text-center">
+        <form class="comment-form text-center">
+          <textarea
+            class="dropdown-item"
+            name="comment-body"
+            aria-labelledby="dropdownMenu2"
+          ></textarea>
+          <button class="btn btn-info btn-edit" type="submit"><i
+              class="fa fa-plus fa-2x"
+            ></i></button></form>
+      </div>
+    </div>
+  {{!-- {{/if}} --}}
+
+</div>
+
+<br />
+<div class="comments">
+
+  {{#each game.comments}}
+    <div class="card text-center mb-3 mx-auto w-100" style="max-width: 40rem;">
+
+      <section class="comment">
+        <div class="meta card-header">
+          <h4>
+            <span class="text-danger">{{user.username}}</span>
+            on
+            <span class="text-info">{{format_date created_at}}</span>
+          </h4>
+        </div>
+        <div class="text card-body">
+          <h4> {{comment_text}}</h4>
+        </div>
+
+      </section>
     </div>
 
-    
-<div class = "comments-container">
-
-    <h1>SEE WHAT OTHERS ARE SAYING ABOUT THIS GAME!</h1>
-    <h3>Favorites: 4</h3>
-    <button type="button" class="btn btn-danger"><i class="fas fa-heart"></i></button>
-    {{!-- {{vote_count} --}}
-
-
-    <div class="comments">
-    {{!-- {{#each this}} --}}
-    <section class="comment">
-        <div class="meta">
-        {{!-- {{user.username}} on {{created_at}} --}}
-        lhauxwell6 on 8/16/2021
-        
-        </div>
-        <div class="text">
-        {{!-- {{comment_text}} --}}
-        This game is great!
-        </div>
-    </section>
-    {{!-- {{/each}} --}}
-    </div> 
+  {{/each}}
 </div>
 
-    {{!-- {{#if loggedIn}} --}}
-    <div class="mx-auto w-100">
-<form class="comment-form">
-    <textarea name="comment-body"></textarea>
+<br />
 
-  <div class="mx-auto">
-    <button type="submit" class="btn btn-info"><i class="fas fa-comments"></i></button>
-    
-  </div>
-</form>
-</div>
-<br>
-{{!-- {{/if}} --}}
-
-{{!-- {{> comments post.comments}} --}}
-
+  <script src="/javascript/upvote.js"></script>
 {{!-- {{#if loggedIn}} --}}
-<script src="/javascript/comment.js"></script>
-{{!-- <script src="/javascript/upvote.js"></script> --}}
+  <script src="/javascript/comment.js"></script>
 {{!-- {{/if}} --}}
 

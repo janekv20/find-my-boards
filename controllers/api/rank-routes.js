@@ -12,20 +12,21 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
     Rank.create({
-    user_id: req.body.user_id,
-    game_id: req.body.game_id,
-  })
-    .then((dbRankData) => res.json(dbRankData))
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
-    });
+      user_id: req.body.user_id,
+      game_id: req.body.game_id,
+      user_id: req.session.user_id,
+    })
+      .then((dbRankData) => res.json(dbRankData))
+      .catch((err) => {
+        console.log(err);
+        res.status(400).json(err);
+      });
 });
 
 router.delete("/:id", (req, res) => {
-    Rank.destroy({
+  Rank.destroy({
     where: {
       id: req.params.id,
     },
