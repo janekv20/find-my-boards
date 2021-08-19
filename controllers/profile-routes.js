@@ -88,7 +88,8 @@ router.post('', (req, res) => {
         }
       }
     )
-    res.redirect('back');
+    setTimeout(function() {
+      res.redirect('back')}, 500);
   });
 });
 
