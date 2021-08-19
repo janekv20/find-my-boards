@@ -1,3 +1,20 @@
+async function getFollowingIds(username) {
+
+    const followIdArray = []
+
+    const response = await fetch(`/api/users/username/${username}`)
+
+    if (response.ok) {
+        const data = await response.json();
+
+        for (let i = 0; i < data.followings.length; i++) {
+            followIdArray.push(data.followings[i].id)
+        }
+
+        return followIdArray
+    }
+}
+
 async function followingBtnHandler(btn) {
 
     const username = btn.textContent;
@@ -47,3 +64,43 @@ if (urlLastWord !== 'profile') {
 
     $('#follow-user-div').append(followBtn);
 }
+else {
+
+    const username = $('#profile-username').text()
+
+    getFollowingIds(username)
+
+        .then((followIdArray) => {
+
+            for (let i = 0; i < followIdArray.length; i++) {
+                const followId = $('#follow-id').text()
+
+                const unfollowBtn = $('<button>')
+                    .addClass('btn')
+                    .text('-Unfollow')
+                    .attr({
+                        type: 'button',
+                        id: 'unfollow-btn'
+                    })
+                    .on('click', async function () {
+                        const response = await fetch(`/api/followings/${followId}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            window.location.reload();
+                        } else {
+                            alert(response.statusText)
+                        }
+                    })
+
+                let unfollowBtnDivEl = $('#unfollow-btn-div-' + followIdArray[i])
+
+                $(unfollowBtnDivEl).append(unfollowBtn);
+            }
+        })
+}
+

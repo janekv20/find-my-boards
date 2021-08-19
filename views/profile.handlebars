@@ -83,12 +83,15 @@
             </div>
 
             <div class="row">
-              <div class="col-sm-12">
+              <div class="col-sm-5">
                 {{#each user.followings}}
-                <button onclick='followingBtnHandler(this)' class='following-btn'>{{following_username}}</button>
+                <button onclick='followingBtnHandler(this)' class='following-btn'><span style='opacity:0' id='follow-id'>{{id}}</span>{{following_username}}</button>
                 <br>
-                {{/each}}
               </div>
+              <div id='unfollow-btn-div-{{id}}' class='col-sm-5'>
+
+              </div>
+              {{/each}}
             </div>
           </div>
         </div>
