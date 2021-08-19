@@ -21,8 +21,8 @@ const following_username = $("#profile-username").text();
 
 if (urlLastWord !== "profile") {
   const followBtn = $("<button>")
-    .addClass("btn")
-    .text("+Follow")
+  .html("<i class='fas fa-user-plus'></i>")
+    .addClass("btn btn-primary")
     .attr({
       type: "button",
       id: "follow-btn",
