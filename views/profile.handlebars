@@ -95,18 +95,6 @@
           </div>
         </div>
 
-        <div class="row">
-          {{#each user.followings}}
-          <div class="col-sm-5">
-            <button onclick='followingBtnHandler(this)' class='following-btn'><span style='opacity:0'
-                id='follow-id'>{{id}}</span>{{following_username}}</button>
-            <br>
-          </div>
-          <div id='unfollow-btn-div-{{id}}' class='col-sm-5'>
-          </div>
-          {{/each}}
-        </div>
-
         <div class="text-center">
           <ul class="list-group" id="following-list">
 

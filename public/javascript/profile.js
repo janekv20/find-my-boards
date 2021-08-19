@@ -90,8 +90,8 @@ else {
                         });
 
                         if (response.ok) {
-                            
-                            // window.location.reload();
+                            $(this).closest('li').remove();
+                            window.location.reload();
                         } else {
                             alert(response.statusText)
                         }
