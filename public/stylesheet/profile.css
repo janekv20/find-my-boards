@@ -64,10 +64,18 @@ nav a {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
     background-clip: border-box;
+    background-color: #BFDBAE; 
     border: 0 solid rgba(0,0,0,.125);
     border-radius: .25rem;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  color: black;
 }
 
 .card-body {
