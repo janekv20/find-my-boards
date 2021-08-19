@@ -91,7 +91,8 @@ else {
                         });
 
                         if (response.ok) {
-                            window.location.reload();
+                            
+                            // window.location.reload();
                         } else {
                             alert(response.statusText)
                         }
