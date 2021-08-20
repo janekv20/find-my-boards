@@ -92,7 +92,7 @@ const gameData = [
       "Wingspan is a competitive, medium-weight, card-driven, engine-building board game from Stonemaier Games. It's designed by Elizabeth Hargrave and features over 170 birds illustrated by Beth Sobel, Natalia Rojas, and Ana Maria Martinez.",
   },
   {
-    game_name: "Root",
+    game_name: "Twilight Struggle",
     category_id: 2,
     min_number_of_players: 2,
     max_number_of_players: 2,
