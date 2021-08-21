@@ -1,14 +1,408 @@
 const sequelize = require('../config/connection');
 const { User } = require('../models');
 
-const userdata = [
-  {
-    username: 'jibberish',
-    email: 'jibberish@jibberish.com',
-    password: 'jibberish123'
-  },
-]
+const userdata = [{
+  username: "cbuss0",
+  email: "zbrody0@ask.com",
+  password: "FTlRmDBe"
+}, {
+  username: "cjoffe1",
+  email: "dwensley1@ftc.gov",
+  password: "tDXQ4c1Gkh37"
+}, {
+  username: "okovalski2",
+  email: "dfarnall2@sitemeter.com",
+  password: "HPAV6BRAGsaN"
+}, {
+  username: "esambrok3",
+  email: "cturfitt3@wordpress.org",
+  password: "TTN9r9pB"
+}, {
+  username: "dwoolham4",
+  email: "dsandbrook4@unesco.org",
+  password: "XldRz7KTm"
+}, {
+  username: "tmalek5",
+  email: "mpatroni5@fastcompany.com",
+  password: "XgblT5P1kF"
+}, {
+  username: "lhauxwell6",
+  email: "meyers6@intel.com",
+  password: "CP7EicA"
+}, {
+  username: "gsturr7",
+  email: "sgrayshan7@patch.com",
+  password: "9JaWYjf3a"
+}, {
+  username: "spurseglove8",
+  email: "mgiacometti8@facebook.com",
+  password: "bkP8SMp"
+}, {
+  username: "gshoubridge9",
+  email: "rnottingam9@shinystat.com",
+  password: "9ABX4yuP"
+}, {
+  username: "edallona",
+  email: "imoriartya@clickbank.net",
+  password: "CH4UN2C"
+}, {
+  username: "gcoltb",
+  email: "mradenhurstb@state.tx.us",
+  password: "QlC4Rp0n"
+}, {
+  username: "lwetherheadc",
+  email: "fgrimseyc@cafepress.com",
+  password: "RLP3xa"
+}, {
+  username: "marmald",
+  email: "pwoosnamd@gizmodo.com",
+  password: "eIEBI5z"
+}, {
+  username: "hbirtwistlee",
+  email: "wrumblee@topsy.com",
+  password: "9Emu5Cup"
+}, {
+  username: "ggallichicciof",
+  email: "cniscof@elpais.com",
+  password: "dDqyiC0Kg"
+}, {
+  username: "odarceyg",
+  email: "hsteedeng@reference.com",
+  password: "tAPfEyHD"
+}, {
+  username: "hcapenorh",
+  email: "jcampsallh@google.com",
+  password: "TqrvtGd"
+}, {
+  username: "djeniceki",
+  email: "mperrati@admin.ch",
+  password: "bJsEIS3g"
+}, {
+  username: "apendridj",
+  email: "kbalderyj@skyrock.com",
+  password: "8vcaSEAcAC"
+}, {
+  username: "ddrucek",
+  email: "tstickleyk@narod.ru",
+  password: "gjFjL7CNB4"
+}, {
+  username: "vdavidofskil",
+  email: "rcharlotl@comcast.net",
+  password: "dVAN01Qbd8eE"
+}, {
+  username: "mmostynm",
+  email: "cworpolem@seesaa.net",
+  password: "lJiqjiP3y4R"
+}, {
+  username: "sstillern",
+  email: "nmcneachtainn@webnode.com",
+  password: "qKm2NC6pG"
+}, {
+  username: "mchurno",
+  email: "smontgomeryo@youtube.com",
+  password: "3H9TxCv26Rs"
+}, {
+  username: "fscrivenerp",
+  email: "scressorp@arstechnica.com",
+  password: "50y24GA"
+}, {
+  username: "jarnholdtq",
+  email: "etesauroq@quantcast.com",
+  password: "v78gvve3Nzl"
+}, {
+  username: "vgatissr",
+  email: "ppasher@oakley.com",
+  password: "eNajGCmi"
+}, {
+  username: "tpoutresss",
+  email: "gcasletts@wufoo.com",
+  password: "rdqHcFkNT"
+}, {
+  username: "wlearoydt",
+  email: "rgoodlett@aboutads.info",
+  password: "0SXXfP42"
+}, {
+  username: "llivingstoneu",
+  email: "ayatmanu@oaic.gov.au",
+  password: "jHS9KIfkd9"
+}, {
+  username: "yantosikv",
+  email: "kdummettv@de.vu",
+  password: "g1xaSsaQ"
+}, {
+  username: "seouzanw",
+  email: "dsingletonw@desdev.cn",
+  password: "Hx2j5aAuN"
+}, {
+  username: "ivaughtonx",
+  email: "oscreachx@mediafire.com",
+  password: "N6QdCJbjpz"
+}, {
+  username: "tleamany",
+  email: "kdearesy@unc.edu",
+  password: "n89yCEZoufF"
+}, {
+  username: "lmcenhillz",
+  email: "vgannicleffz@craigslist.org",
+  password: "4bIp2yu94"
+}, {
+  username: "dfrancescuzzi10",
+  email: "mlapley10@wunderground.com",
+  password: "ovNEp4n9jC"
+}, {
+  username: "kwalkden11",
+  email: "obulward11@ezinearticles.com",
+  password: "0vueyVZ5"
+}, {
+  username: "bcarbery12",
+  email: "scockran12@vistaprint.com",
+  password: "WQaUG9p"
+}, {
+  username: "ngarret13",
+  email: "vpollington13@com.com",
+  password: "EzfBRbJ"
+}, {
+  username: "mharnetty14",
+  email: "araddish14@google.cn",
+  password: "DhZR28bfFuLg"
+}, {
+  username: "jgoadby15",
+  email: "lparradice15@state.gov",
+  password: "uj2rrE6b3D"
+}, {
+  username: "agatling16",
+  email: "eslimings16@flickr.com",
+  password: "FPhSSHL"
+}, {
+  username: "bvigar17",
+  email: "jflavelle17@comsenz.com",
+  password: "T73Rg27qPl"
+}, {
+  username: "ghammelberg18",
+  email: "mmcall18@nytimes.com",
+  password: "qHSut0K"
+}, {
+  username: "svanhalen19",
+  email: "ghatton19@discovery.com",
+  password: "lVJYAKL"
+}, {
+  username: "felster1a",
+  email: "ecolledge1a@canalblog.com",
+  password: "i794KS8vI"
+}, {
+  username: "dshowers1b",
+  email: "fgodden1b@addtoany.com",
+  password: "T6v0aL"
+}, {
+  username: "twidd1c",
+  email: "rmcgoldrick1c@smh.com.au",
+  password: "jbns4T"
+}, {
+  username: "mtremayle1d",
+  email: "amallinson1d@google.com.au",
+  password: "KUXPjYSKb"
+}, {
+  username: "stamlett1e",
+  email: "aaherne1e@amazon.co.uk",
+  password: "YhbjGbrJzgf"
+}, {
+  username: "jbedle1f",
+  email: "tfantonetti1f@alexa.com",
+  password: "Sopz2TA5M"
+}, {
+  username: "agitthouse1g",
+  email: "pbartrop1g@elpais.com",
+  password: "Dxdj2q6q8LH"
+}, {
+  username: "eszantho1h",
+  email: "rsharratt1h@liveinternet.ru",
+  password: "PpZ177"
+}, {
+  username: "sloble1i",
+  email: "ecamin1i@wikipedia.org",
+  password: "se2eLGsvlbaH"
+}, {
+  username: "eoshaughnessy1j",
+  email: "tpurchall1j@scribd.com",
+  password: "Gjx1bfg0IKx3"
+}, {
+  username: "csalvador1k",
+  email: "ehartridge1k@google.pl",
+  password: "ijr1Tri183i"
+}, {
+  username: "askacel1l",
+  email: "ghorick1l@jigsy.com",
+  password: "2RP74OS"
+}, {
+  username: "mmackieson1m",
+  email: "gsnoddin1m@economist.com",
+  password: "LFPrEkayi"
+}, {
+  username: "cjoicey1n",
+  email: "fwyrill1n@nymag.com",
+  password: "fxrdn11v2o"
+}, {
+  username: "mmcjury1o",
+  email: "edelacroix1o@cbslocal.com",
+  password: "3NEkqEOU9rKX"
+}, {
+  username: "ddabbs1p",
+  email: "rstarrs1p@tripadvisor.com",
+  password: "3CEPIEpAwrx"
+}, {
+  username: "jselwin1q",
+  email: "ddudley1q@nymag.com",
+  password: "Cz5AzMlmqSK"
+}, {
+  username: "wgillopp1r",
+  email: "leastham1r@sciencedirect.com",
+  password: "GF1EVs64Y"
+}, {
+  username: "gvogeller1s",
+  email: "dblakely1s@feedburner.com",
+  password: "oaXykrvdcn"
+}, {
+  username: "hhaldin1t",
+  email: "jrobson1t@barnesandnoble.com",
+  password: "aNAZnEsYTlX"
+}, {
+  username: "hdeluna1u",
+  email: "udelph1u@berkeley.edu",
+  password: "U2tT3G2Y9So"
+}, {
+  username: "elamperti1v",
+  email: "lcastagno1v@rakuten.co.jp",
+  password: "ylLYWC"
+}, {
+  username: "bworsell1w",
+  email: "etimmermann1w@artisteer.com",
+  password: "rbDABtyo"
+}, {
+  username: "lwickmann1x",
+  email: "jhannant1x@ftc.gov",
+  password: "z4pCYo9Ipb"
+}, {
+  username: "sashbey1y",
+  email: "hbontein1y@blogspot.com",
+  password: "j491rLQoxwN8"
+}, {
+  username: "torrom1z",
+  email: "ppaniman1z@fda.gov",
+  password: "yD8NTx"
+}, {
+  username: "gcalderon20",
+  email: "djobke20@privacy.gov.au",
+  password: "RAGJUpQ"
+}, {
+  username: "scrop21",
+  email: "mgilbride21@theglobeandmail.com",
+  password: "75Srqsxb5x2p"
+}, {
+  username: "tfeare22",
+  email: "dtoffts22@bigcartel.com",
+  password: "d0zRk83"
+}, {
+  username: "bgodwin23",
+  email: "tcapeling23@oracle.com",
+  password: "aeJ5dmeajQ"
+}, {
+  username: "hmcdool24",
+  email: "jgatehouse24@sogou.com",
+  password: "O2q5WzRYLdr8"
+}, {
+  username: "fgellion25",
+  email: "smoulton25@ezinearticles.com",
+  password: "2NbVYy2LX"
+}, {
+  username: "lrispen26",
+  email: "pcavie26@amazon.de",
+  password: "yq2SVbl"
+}, {
+  username: "tmohamed27",
+  email: "jkynston27@addtoany.com",
+  password: "8ykkf5R3v"
+}, {
+  username: "vpugh28",
+  email: "alaugheran28@ehow.com",
+  password: "tzGineZZD"
+}, {
+  username: "iobrian29",
+  email: "cdandrea29@issuu.com",
+  password: "fnDLGku2Tf9"
+}, {
+  username: "mransley2a",
+  email: "lbendig2a@smugmug.com",
+  password: "rIG6PV8rk95F"
+}, {
+  username: "bdowda2b",
+  email: "halgar2b@mail.ru",
+  password: "RyddGxtLk"
+}, {
+  username: "cpohlak2c",
+  email: "rmcaneny2c@exblog.jp",
+  password: "unmS3zcjbw"
+}, {
+  username: "tupcraft2d",
+  email: "arodrigues2d@bbb.org",
+  password: "G50UfAg"
+}, {
+  username: "kolenechan2e",
+  email: "dbottleson2e@virginia.edu",
+  password: "mugbK3xDbO"
+}, {
+  username: "tsargood2f",
+  email: "agarrelts2f@mlb.com",
+  password: "bZV4DbEhe2"
+}, {
+  username: "pvogt2g",
+  email: "nhumphries2g@newyorker.com",
+  password: "mtnwtNjCU"
+}, {
+  username: "rryley2h",
+  email: "ddabnor2h@slate.com",
+  password: "aXpONDPq"
+}, {
+  username: "abackshill2i",
+  email: "vplevin2i@geocities.jp",
+  password: "CPthMup9w"
+}, {
+  username: "bcluney2j",
+  email: "sbortolozzi2j@ucoz.com",
+  password: "Qo8PCMA3y9dK"
+}, {
+  username: "mpetris2k",
+  email: "thellmer2k@vinaora.com",
+  password: "WlKPphJ"
+}, {
+  username: "ghegden2l",
+  email: "alyte2l@indiatimes.com",
+  password: "vpqQIu"
+}, {
+  username: "modreain2m",
+  email: "wbanes2m@wufoo.com",
+  password: "kfMEwazAt"
+}, {
+  username: "kfortnam2n",
+  email: "pdaw2n@360.cn",
+  password: "SAKIZPfpBI5"
+}, {
+  username: "iclimar2o",
+  email: "sjuly2o@apache.org",
+  password: "yNL1GqwS69"
+}, {
+  username: "jdearell2p",
+  email: "ilanfare2p@constantcontact.com",
+  password: "itMI0Q7"
+}, {
+  username: "mdikelin2q",
+  email: "tbeek2q@oakley.com",
+  password: "nrFfWnL3u74O"
+}, {
+  username: "kschlagman2r",
+  email: "wstrick2r@etsy.com",
+  password: "3Lv73vJY128c"
+}]
 
-const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
+const seedUsers = () => User.bulkCreate(userdata, { individualHooks: true });
 
 module.exports = seedUsers;

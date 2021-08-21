@@ -7,7 +7,6 @@ Rank.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -15,7 +14,6 @@ Rank.init(
     game_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: null,
       references: {
         model: 'game',
         key: 'id'
@@ -24,7 +22,6 @@ Rank.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: null,
       references: {
         model: 'user',
         key: 'id'
@@ -33,6 +30,7 @@ Rank.init(
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'rank'

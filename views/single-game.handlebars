@@ -1,0 +1,145 @@
+<link rel="stylesheet" href="/stylesheet/game.css" />
+<br />
+
+<div class=" mx-auto w-50">
+ <a id="player-display" tabindex="0" class="btn btn-danger" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom"> 
+
+
+ 
+
+ {{game.ranks.length}} Players like this game</a>
+
+
+<div id="popover-content" class="hidden">
+  <div>
+    {{#each game.ranks}}
+   <a class="btn btn-info mx-auto" href="../profile/{{user_id}}">{{user.username}}</a>
+    <br>
+
+  {{!-- {{#if user.image}}
+  <img src="/images/{{user.image}}" alt="Profile Pic" width="150">
+  {{else}}
+  <img src="/images/avatar.png" alt="Profile Pic" width="150">
+  {{/if}} --}}
+
+    {{/each}}
+  </div>
+</div>
+
+<div id="popover-title" class="hidden">
+  <h1 class="text-center text-info"><b>Players</b> </h1>
+</div>
+</div>
+
+<div class="game-card mx-auto">
+  <div class="cont">
+    <div class="title single">
+      <p>{{game.category.category_name}}</p>
+      <h2>{{game.game_name}}</h2>
+    </div>
+    <p id="play-details"><b>Game Details</b></p>
+    <div class="details">
+      <div class="game-info">
+        <p>Players</p>
+        <p>{{game.min_number_of_players}}-{{game.max_number_of_players}}</p>
+      </div>
+      <div class="game-info">
+        <p>Average Game Time</p>
+        <p>{{game.avg_min_game_time}}-{{game.avg_max_game_time}}</p>
+      </div>
+      <div class="game-description">
+        {{game.game_description}}
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div class="card mx-auto button-container" >
+<button id="favorite" class="upvote-btn btn btn-danger" data-container="body" data-trigger="hover" data-placement="right" data-content="CLICK TO ADD GAME TO YOUR FAVORITES!" ><i
+      class="fas fa-heart"
+    ></i></button>
+
+  {{!-- {{#if loggedIn}} --}}
+    <div class="dropdown">
+      <button
+        type="button"
+        class="btn btn-info dropdown-toggle"
+        id="dropdownMenu2 comment-button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        data-container="body" data-trigger="hover" data-placement="left" data-content="CLICK TO LEAVE A COMMENT!"
+      ><i class="fas fa-comments"></i></button>
+      <div class="dropdown-menu text-center">
+        <form class="comment-form text-center">
+          <textarea
+            class="dropdown-item"
+            name="comment-body"
+            aria-labelledby="dropdownMenu2"
+          ></textarea>
+          <button class="btn btn-info btn-edit" type="submit" ><i
+              class="fa fa-plus fa-2x"
+            ></i></button></form>
+      </div>
+    </div>
+  {{!-- {{/if}} --}}
+
+</div>
+
+<br />
+<div class="comments text-center">
+ <h2 style="color: white;">Total Comments: {{game.comments.length}}</h2> 
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+  </div>
+
+
+
+  {{#each game.comments}}
+    <div class="card text-center mb-3 mx-auto w-100" style="max-width: 40rem;">
+
+      <section class="comment">
+        <div class="meta card-header">
+          <h4>
+            <span class="text-danger">{{user.username}}</span>
+            on
+            <span class="text-info">{{format_date created_at}}</span>
+          </h4>
+        </div>
+        <div class="text card-body">
+          <h4> {{comment_text}}</h4>
+        </div>
+
+      </section>
+    </div>
+
+  {{/each}}
+
+</div>
+
+<br />
+
+  <script src="/javascript/upvote.js"></script>
+{{!-- {{#if loggedIn}} --}}
+  <script src="/javascript/comment.js"></script>
+{{!-- {{/if}} --}}
+<script src="/javascript/game.js" defer></script>
+

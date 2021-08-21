@@ -3,41 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FindMyBoards</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/stylesheet/main.css" defer />
+    <link rel="stylesheet" href="/stylesheet/login.css" defer />
+    <title>{{title}}</title>
   </head>
-
   <body>
+    {{! hero  and naviagion links}}
 
-    <div class="wrapper">
+    <header>
+      <div class="hero row">
+        <img src="/images/logo.png" />
+      </div>
 
-      <header>
-        <h1>
-          <a href="/">FindMyBoards</a>
-        </h1>
-        <nav>
-          <button id="logout" class="btn-no-style">logout</button>
-          <a href="/login">login</a>
-        </nav>
+      <nav class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link btn btn-success" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-success" href="/game">Game</a>
+        </li>
+        {{#if loggedIn}}
+          <li class="nav-item">
+            <a class="nav-link btn btn-success" href="/profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a id="logout" class="nav-link btn btn-success">Logout</a>
+          </li>
+        {{else}}
 
-      </header>
+          {{#if loginPage}}
+            <li class="nav-item">
+              <a href="/signup" class="nav-link btn btn-success">Signup</a>
+            </li>
+          {{else}}
+            <li class="nav-item">
+              <a href="/login" class="nav-link btn btn-success">Login</a>
+            </li>
+          {{/if}}
 
-      <main>
-        {{{body}}}
-      </main>
+        {{/if}}
+      </nav>
 
-      <footer>
-        <p>
-          There are only three forms of high art: the symphony, the illustrated
-          children's book and the board game.
-        </p>
-        <p>
-          Brian K. Vaughan
-        </p>
-      </footer>
+    </header>
 
-    </div>
-    <script src="/javascript/logout.js"></script>
+    {{! page content }}
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <h2 style=" color:#BFDBAE;"><strong>Made by Group 3:</strong></h2>
+        </div>
+        <div style="display: flex;">
+          <h2 class="flex" style="margin: 0 60px 0 0; color:#BFDBAE;"><strong
+            >Josh</strong></h2>
+          <h2 class="flex" style="margin: 0 30px; color:#BFDBAE;"><strong
+            >Mark</strong></h2>
+          <h2 class="flex" style="margin: 0 40px; color:#BFDBAE;"><strong
+            >Jessica</strong></h2>
+          <h2 class="flex" style="margin: 0 40px; color:#BFDBAE;"><strong
+            >Jane</strong></h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+
+        <div class="github row">
+          <!-- links to team's GitHub pages -->
+          <div class="column">
+            <a href="https://github.com/Joshsands" target="_blank">
+              <img
+                src="/images/tophat.png"
+                alt="Josh's GitHub Profile"
+                height="100px"
+                width="100px"
+              />
+            </a>
+          </div>
+          <div class="column">
+            <a href="https://github.com/mjgiannelli" target="_blank">
+              <img
+                src="/images/car.png"
+                alt="Mark's GitHub Profile"
+                height="100px"
+                width="200px"
+              />
+            </a>
+          </div>
+          <div class="column">
+            <a href="https://github.com/JSheleg" target="_blank">
+              <img
+                src="/images/dog.png"
+                alt="Jessica's GitHub Profile"
+                height="100px"
+                width="100px"
+              />
+            </a>
+          </div>
+          <div class="column">
+            <a href="https://github.com/janekv20" target="_blank">
+              <img
+                src="/images/ship.png"
+                alt="Jane's GitHub Profile"
+                height="100px"
+                width="200px"
+              />
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <br />
+      <br />
+    </footer>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js" defer></script>
+    {{/if}}
+
   </body>
 
 </html>

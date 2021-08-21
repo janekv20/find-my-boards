@@ -1,0 +1,34 @@
+ 
+
+<link rel="stylesheet" href="/stylesheet/game.css" />
+
+<div class="row">
+
+  {{#each games}}
+
+    <div class="col-md">
+      <div class="game-card mx-auto">
+        <div class="cont">
+          <div class="title text-white">
+            <h5>{{game_name}}</h5>
+          </div>
+          <p id="play-details"><b>Description</b></p>
+          <div class="details">
+            <div class="game-description">
+              {{game_description}}
+            </div>
+            <div class="game-info">
+              <p class="text-info">Comments: {{comments.length}}</p>
+              <p class="text-danger">Favorites: {{ranks.length}} <i class="fas fa-heart"></i></p>
+            </div>
+            <div class="game-link">
+              <a href="/game/{{id}}" class="card-link">See More Information</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  {{/each}}
+</div>
+

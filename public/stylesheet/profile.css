@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+  }
+
+  .header {
+    padding: 30px;
+    text-align: center;
+    background:#C70000;
+    color: white;
+  }
+  
+.header h1 {
+    font-size: 50px;
+  }
+  
+nav {
+    overflow: hidden;
+    background-color: #8FBC72;
+    border: 1px solid black;
+  }
+  
+nav a {
+    float: left;
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-right: 1px solid black;
+  }
+  
+  body {
+    font-family: Garamond;
+    padding: 10px;
+    background: #BFDBAE;
+    margin-top:20px;
+    color: #1a202c;
+    text-align: left;
+  }
+  
+  .josh {
+    background-color: orange;
+  }
+  
+  .mark {
+    background-color: green;
+  }
+  
+  .jessica {
+    background-color: yellow;
+  }
+  
+  .jane {
+    background-color: magenta;
+  }
+
+.card {
+    position: sticky;
+    display: inline-block;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: #BFDBAE; 
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  color: black;
+}
+
