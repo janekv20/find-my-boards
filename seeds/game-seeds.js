@@ -322,14 +322,94 @@ const gameData = [
       "In Last Will, each player starts with a certain amount of money, an individual player board, two errand boys and two cards in some combination of properties and helpers. At the start of each round, lay out cards from the appropriate decks on the offering boards; the four regular decks are properties, companions, events, helpers and expenses, with special cards forming a deck of their own. The particular mix of cards varies by round and by the number of players.",
   },
   {
-    game_name: "Last Will",
+    game_name: "Gloomhaven",
+    category_id: 4,
+    min_number_of_players: 1,
+    max_number_of_players: 4,
+    avg_min_game_time: 60,
+    avg_max_game_time: 120,
+    game_description:
+      "Gloomhaven is a game of Euro-inspired tactical combat in a persistent world of shifting motives. Players will take on the role of a wandering adventurer with their own special set of skills and their own reasons for traveling to this dark corner of the world. Players must work together out of necessity to clear out menacing dungeons and forgotten ruins. In the process, they will enhance their abilities with experience and loot, discover new locations to explore and plunder, and expand an ever-branching story fueled by the decisions they make.",
+  },
+  {
+    game_name: "Nemesis",
+    category_id: 4,
+    min_number_of_players: 1,
+    max_number_of_players: 5,
+    avg_min_game_time: 90,
+    avg_max_game_time: 180,
+    game_description:
+      "Nemesis is a semi-cooperative game in which you and your crewmates must survive on a ship infested with hostile organisms. To win the game, you have to complete one of the two objectives dealt to you at the start of the game and get back to Earth in one piece. You will find many obstacles on your way: swarms of Intruders (the name given to the alien organisms by the ship AI), the poor physical condition of the ship, agendas held by your fellow players, and sometimes just cruel fate.",
+  },
+  {
+    game_name: "The 7th Continent",
+    category_id: 4,
+    min_number_of_players: 1,
+    max_number_of_players: 4,
+    avg_min_game_time: 5,
+    avg_max_game_time: 1000,
+    game_description:
+      "In The 7th Continent, a solo or cooperative choose-your-own-adventure exploration board game, you choose a character and begin your adventure on your own or with a team of other explorers. Inspired by the Fighting Fantasy book series, you will discover the extent of this wild new land through a variety of terrain and event cards. In a land fraught with danger and wonders, you have to use every ounce of wit and cunning to survive, crafting tools, weapons, and shelter to ensure your survival.",
+  },
+  {
+    game_name: "Mage Knight Board Game",
+    category_id: 4,
+    min_number_of_players: 1,
+    max_number_of_players: 4,
+    avg_min_game_time: 60,
+    avg_max_game_time: 240,
+    game_description:
+      "The Mage Knight board game puts you in control of one of four powerful Mage Knights as you explore (and conquer) a corner of the Mage Knight universe under the control of the Atlantean Empire. Build your army, fill your deck with powerful spells and actions, explore caves and dungeons, and eventually conquer powerful cities controlled by this once-great faction! In competitive scenarios, opposing players may be powerful allies, but only one will be able to claim the land as their own.",
+  },
+  {
+    game_name: "Too Many Bones",
+    category_id: 4,
+    min_number_of_players: 1,
+    max_number_of_players: 4,
+    avg_min_game_time: 60,
+    avg_max_game_time: 120,
+    game_description:
+      "Too Many Bones comes loaded for bear by breaking into a new genre: the dice-builder RPG. This game takes everything you think you know about dice-rolling and turns it on its head. Dripping with strategy, this fantasy-based RPG puts you in the skin of a new race and takes you on an adventure to the northern territories to root out and defeat growing enemy forces and of course the infamous baddie responsible.",
+  },
+  {
+    game_name: "Eldritch Horror",
+    category_id: 4,
+    min_number_of_players: 1,
+    max_number_of_players: 8,
+    avg_min_game_time: 120,
+    avg_max_game_time: 240,
+    game_description:
+      "Eldritch Horror is a co-operative game of terror and adventure in which one to eight players take the roles of globetrotting investigators working to solve mysteries, gather clues, and protect the world from an Ancient One – that is, an elder being intent on destroying our world. Each Ancient One comes with its own unique decks of Mystery and Research cards, which draw you deeper into the lore surrounding each loathsome creature. Discover the true name of Azathoth or battle Cthulhu on the high seas.",
+  },
+  {
+    game_name: "Champions of Midgard",
     category_id: 4,
     min_number_of_players: 2,
-    max_number_of_players: 5,
-    avg_min_game_time: 45,
-    avg_max_game_time: 75,
+    max_number_of_players: 4,
+    avg_min_game_time: 60,
+    avg_max_game_time: 90,
     game_description:
-      "In Last Will, each player starts with a certain amount of money, an individual player board, two errand boys and two cards in some combination of properties and helpers. At the start of each round, lay out cards from the appropriate decks on the offering boards; the four regular decks are properties, companions, events, helpers and expenses, with special cards forming a deck of their own. The particular mix of cards varies by round and by the number of players.",
+      "Champions of Midgard is a middleweight, Viking-themed, worker placement game with dice rolling in which players are leaders of Viking clans who have traveled to an embattled Viking harbor town to help defend it against the threat of trolls, draugr, and other mythological Norse beasts. By defeating these epic creatures, players gain glory and the favor of the gods. When the game ends, the player who has earned the most glory earns the title of Jarl and is recognized as a champion of Midgard!",
+  },
+  {
+    game_name: "PARKS",
+    category_id: 4,
+    min_number_of_players: 1,
+    max_number_of_players: 5,
+    avg_min_game_time: 30,
+    avg_max_game_time: 60,
+    game_description:
+      "In PARKS, players will take on the role of two hikers as they trek through different trails across four seasons of the year. While on the trail, these hikers will take actions and collect memories of the places your hikers visit. These memories are represented by various resource tokens like mountains and forests. Collecting these memories in sets will allow players to trade them in to visit a National Park at the end of each hike.",
+  },
+  {
+    game_name: "War of the Ring",
+    category_id: 4,
+    min_number_of_players: 2,
+    max_number_of_players: 4,
+    avg_min_game_time: 120,
+    avg_max_game_time: 120,
+    game_description:
+      "Initially, the Free People Nations are reluctant to take arms against Sauron, so they must be attacked by Sauron or persuaded by Gandalf or other Companions, before they start to fight properly: this is represented by the Political Track, which shows if a Nation is ready to fight in the War of the Ring or not.",
   },
 ];
 
