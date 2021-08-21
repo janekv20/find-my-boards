@@ -17,6 +17,7 @@ async function getFollowingIds(username) {
 
 async function followingBtnHandler(btn) {
     const username = btn.textContent;
+    console.log(username)
 
     const response = await fetch(`/api/users/username/${username}`);
 
@@ -75,8 +76,8 @@ else {
                 const followId = $('#follow-id').text()
 
                 const unfollowBtn = $('<button>')
-                    .addClass('btn')
-                    .text('-Unfollow')
+                    .addClass('btn btn-primary')
+                    .html('<i class="fas fa-user-minus"></i>')
                     .attr({
                         type: 'button',
                         id: 'unfollow-btn'
