@@ -201,6 +201,36 @@ const gameData = [
     game_description:
       "Codenames is an easy party game to solve puzzles. The game is divided into red and blue, each side has a team leader, the team leader's goal is to lead their team to the final victory. At the beginning of the game, there will be 25 cards on the table with different words. Each card has a corresponding position, representing different colors. Only the team leader can see the color of the card. The team leader should prompt according to the words, let his team members find out the cards of their corresponding colors, and find out all the cards of their own colors to win.",
   },
+  {
+    game_name: "Azul",
+    category_id: 2,
+    min_number_of_players: 2,
+    max_number_of_players: 4,
+    avg_min_game_time: 30,
+    avg_max_game_time: 45,
+    game_description:
+      "In the game Azul, players take turns drafting colored tiles from suppliers to their player board. Later in the round, players score points based on how they've placed their tiles to decorate the palace. Extra points are scored for specific patterns and completing sets; wasted supplies harm the player's score. The player with the most points at the end of the game wins.",
+  },
+  {
+    game_name: "Patchwork",
+    category_id: 2,
+    min_number_of_players: 2,
+    max_number_of_players: 2,
+    avg_min_game_time: 15,
+    avg_max_game_time: 30,
+    game_description:
+      "In Patchwork, two players compete to build the most aesthetic (and high-scoring) patchwork quilt on a personal 9x9 game board. To start play, lay out all of the patches at random in a circle and place a marker directly clockwise of the 2-1 patch. Each player takes five buttons — the currency/points in the game — and someone is chosen as the start player.",
+  },
+  {
+    game_name: "Go",
+    category_id: 2,
+    min_number_of_players: 2,
+    max_number_of_players: 2,
+    avg_min_game_time: 30,
+    avg_max_game_time: 180,
+    game_description:
+      "By all appearances, it's just two players taking turns laying stones on a 19×19 (or smaller) grid of intersections. But once its basic rules are understood, Go shows its staggering depth. One can see why many people say it's one of the most elegant brain-burning abstract games in history, with players trying to claim territory by walling off sections of the board and surrounding each other's stones. The game doesn't end until the board fills up, or, more often, when both players agree to end it, at which time whoever controls the most territory wins.",
+  },
 ];
 
 const seedGame = () => Game.bulkCreate(gameData);
