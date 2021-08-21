@@ -7,7 +7,7 @@
         <div class="card-body">
           <div class="d-flex flex-column align-items-center text-center">
             {{#if user.image}}
-            <img src="/images/{{user.image}}" alt="Profile Pic" width="150">
+            <img src="/profile-pic/{{user.image}}" alt="Profile Pic" width="150">
             {{else}}
             <img src="/images/avatar.png" alt="Profile Pic" width="150">
             {{/if}}
@@ -16,7 +16,7 @@
 
               {{#if (eq user_id user.id) }}
 
-              <form id='profile-pic-form' action="/" method="POST" encType="multipart/form-data">
+              <form id='profile-pic-form' action="/profile" method="POST" encType="multipart/form-data">
                 <h6>Change Profile Picture</h6>
                 <input type='file' name='profilePic' accept="image/*" id='profile-pic' />
                 <input type="submit" class='bnt'>
