@@ -411,6 +411,86 @@ const gameData = [
     game_description:
       "Initially, the Free People Nations are reluctant to take arms against Sauron, so they must be attacked by Sauron or persuaded by Gandalf or other Companions, before they start to fight properly: this is represented by the Political Track, which shows if a Nation is ready to fight in the War of the Ring or not.",
   },
+  {
+    game_name: "Poker",
+    category_id: 5,
+    min_number_of_players: 2,
+    max_number_of_players: 10,
+    avg_min_game_time: 30,
+    avg_max_game_time: 500,
+    game_description:
+      "Poker is any of a number of card games in which players wager over which hand is best according to that specific game's rules in ways similar to these rankings.",
+  },
+  {
+    game_name: "Casino",
+    category_id: 5,
+    min_number_of_players: 2,
+    max_number_of_players: 5,
+    avg_min_game_time: 90,
+    avg_max_game_time: 90,
+    game_description:
+      "This game is played on a round-course like Monopoly. You have to draw cards for special events and you can purchase 1 of 6 casinos when landing on their space.",
+  },
+  {
+    game_name: "Mega Bucks",
+    category_id: 5,
+    min_number_of_players: 2,
+    max_number_of_players: 7,
+    avg_min_game_time: 75,
+    avg_max_game_time: 100,
+    game_description:
+      "This is an Australian published game based on the Monopoly theme. The board has a circular track with a number of spaces representing Australian & International businesses.",
+  },
+  {
+    game_name: "Casino Hot Dog",
+    category_id: 5,
+    min_number_of_players: 2,
+    max_number_of_players: 8,
+    avg_min_game_time: 30,
+    avg_max_game_time: 45,
+    game_description:
+      "It’s betting time in the “Hot Dog” casino until hackles are raised! Who has lucky paws for pulling chips out of the bag and will muzzle ahead at the end of a round?",
+  },
+  {
+    game_name: "Casino Yahtzee",
+    category_id: 5,
+    min_number_of_players: 2,
+    max_number_of_players: 6,
+    avg_min_game_time: 30,
+    avg_max_game_time: 50,
+    game_description:
+      "Casino Yahtzee combines the suspense of a gambling game with the strategy of Yahtzee. The challenge is to toss the dice and roll the numbers you need.",
+  },
+  {
+    game_name: "Mafia Casino",
+    category_id: 5,
+    min_number_of_players: 2,
+    max_number_of_players: 8,
+    avg_min_game_time: 45,
+    avg_max_game_time: 90,
+    game_description:
+      "Enter a world where money and the mafia go hand in hand. Build your Casino-Hotel and aim to become the richest. Attract prestigious guests, deal pearls and diamonds, and partake in games of chance. Spying, bombings, robbing safes, and embezzlement will help you sabotage the plans of your opponents.",
+  },
+  {
+    game_name: "Real Las Vegas",
+    category_id: 5,
+    min_number_of_players: 2,
+    max_number_of_players: 9,
+    avg_min_game_time: 60,
+    avg_max_game_time: 100,
+    game_description:
+      "Bring home the excitement of a Las Vegas casino into a board game. Players work their way around the board as a group and play all the great casino games including Poker, Blackjack, Roulette and Craps. the winner is the player who has the most money when the first person crosses the finish line.",
+  },
+  {
+    game_name: "Casinopoly",
+    category_id: 5,
+    min_number_of_players: 2,
+    max_number_of_players: 6,
+    avg_min_game_time: 30,
+    avg_max_game_time: 400,
+    game_description:
+      "Viva Las Vegas! And Atlantic City, too! With Casinopoly, players can play a casino party game or create an add-on feature that’s compatible with “the most popular real estate trading board games.” The board just happens to fit snugly into the centre of a Monopoly board, and, whether you’re landing on Boardwalk or cruising the Strip, Casinopoly’s easy dice versions of four casino classics provide plenty of action.",
+  },
 ];
 
 const seedGame = () => Game.bulkCreate(gameData);
