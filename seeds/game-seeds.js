@@ -231,6 +231,106 @@ const gameData = [
     game_description:
       "By all appearances, it's just two players taking turns laying stones on a 19×19 (or smaller) grid of intersections. But once its basic rules are understood, Go shows its staggering depth. One can see why many people say it's one of the most elegant brain-burning abstract games in history, with players trying to claim territory by walling off sections of the board and surrounding each other's stones. The game doesn't end until the board fills up, or, more often, when both players agree to end it, at which time whoever controls the most territory wins.",
   },
+  {
+    game_name: "Dungeon Petz",
+    category_id: 3,
+    min_number_of_players: 2,
+    max_number_of_players: 4,
+    avg_min_game_time: 90,
+    avg_max_game_time: 90,
+    game_description:
+      "Become the leader of an imp family that has just started a new business – breeding and selling petz. Sound simple and safe? Well, we forgot to mention that those petz are for Dungeon Lords. This means magical, playful, sometimes angry monsters that constantly desire attention and at the very moment you want them to demonstrate their qualities to buyers they are sick or they poop. Sometimes you are even glad that you got rid of them – but the profit is unbelievable.",
+  },
+  {
+    game_name: "Dungeon Lords",
+    category_id: 3,
+    min_number_of_players: 2,
+    max_number_of_players: 4,
+    avg_min_game_time: 90,
+    avg_max_game_time: 90,
+    game_description:
+      "In Dungeon Lords, you are an evil dungeonlord who is trying to build the best dungeon out there. You hire monsters, build rooms, buy traps and defeat the do-gooders who wish to bring you down.",
+  },
+  {
+    game_name: "Telestrations",
+    category_id: 3,
+    min_number_of_players: 4,
+    max_number_of_players: 8,
+    avg_min_game_time: 30,
+    avg_max_game_time: 30,
+    game_description:
+      "Each player begins by sketching a TELESTRATIONS word dictated by the roll of a die. The old fashioned sand timer may limit the amount of time they get to execute their sketch, but it certainly doesn't limit creativity! Time's up! All players, all at the same time, pass their sketch to the next player, who must guess what's been drawn. Players then simultaneously pass their guess -- which hopefully matches the original word (or does it??) -- to the next player who must try to draw the word they see -- and so on.",
+  },
+  {
+    game_name: "Dixit",
+    category_id: 3,
+    min_number_of_players: 3,
+    max_number_of_players: 6,
+    avg_min_game_time: 30,
+    avg_max_game_time: 30,
+    game_description:
+      "One player is the storyteller for the turn and looks at the images on the 6 cards in her hand. From one of these, she makes up a sentence and says it out loud (without showing the card to the other players). Each other player selects the card in their hands which best matches the sentence and gives the selected card to the storyteller, without showing it to the others. The storyteller shuffles her card with all the received cards. All pictures are shown face up and every player has to bet upon which picture was the storyteller's.",
+  },
+  {
+    game_name: "Monikers",
+    category_id: 3,
+    min_number_of_players: 4,
+    max_number_of_players: 16,
+    avg_min_game_time: 30,
+    avg_max_game_time: 60,
+    game_description:
+      "Monikers is a party game based on the public domain game Celebrity, where players take turns attempting to get their teammates to guess names by describing or imitating well-known people. In the first round, clue givers can say anything they want, except for the name itself. For the second round, clue givers can only say one word. And in the final round, clue givers can’t say anything at all: they can only use gestures and charades.",
+  },
+  {
+    game_name: "Awkward Guests",
+    category_id: 3,
+    min_number_of_players: 1,
+    max_number_of_players: 8,
+    avg_min_game_time: 45,
+    avg_max_game_time: 75,
+    game_description:
+      "Awkward Guests, a.k.a. Incómodos Invitados, is a one-of-a-kind deduction game with infinite re-playability. You can recreate Mr. Walton's murder in so many different ways that you won't ever play two similar games! (Mr. Walton will not thank you for doing this.)",
+  },
+  {
+    game_name: "Sheriff of Nottingham",
+    category_id: 3,
+    min_number_of_players: 3,
+    max_number_of_players: 5,
+    avg_min_game_time: 60,
+    avg_max_game_time: 60,
+    game_description:
+      "In Sheriff of Nottingham, players will not only be able to experience Nottingham as a merchant of the city, but each turn one player will step into the shoes of the Sheriff himself. Players declare goods they wish to bring into the city, goods that are secretly stored in their burlap sack. The Sheriff must then determine who gets into the city with their goods, who gets inspected, and who may have their goods confiscated!",
+  },
+  {
+    game_name: "Time's Up! Title Recall!",
+    category_id: 3,
+    min_number_of_players: 4,
+    max_number_of_players: 18,
+    avg_min_game_time: 60,
+    avg_max_game_time: 60,
+    game_description:
+      "Based on the popular game Time's Up!, Time's Up: Title Recall challenges players to guess the titles of books, films, songs, and more. Players try to get their teammates to guess the same set of titles over three rounds. In each round, one member of a team tries to get their teammates to guess as many titles as possible in 30 seconds. In round 1, almost any kind of clue is allowed. In round 2, no more than one word can be used in each clue (but unlimited sounds and gestures are permitted.) In round 3, no words are allowed at all.",
+  },
+  {
+    game_name: "Last Will",
+    category_id: 3,
+    min_number_of_players: 2,
+    max_number_of_players: 5,
+    avg_min_game_time: 45,
+    avg_max_game_time: 75,
+    game_description:
+      "In Last Will, each player starts with a certain amount of money, an individual player board, two errand boys and two cards in some combination of properties and helpers. At the start of each round, lay out cards from the appropriate decks on the offering boards; the four regular decks are properties, companions, events, helpers and expenses, with special cards forming a deck of their own. The particular mix of cards varies by round and by the number of players.",
+  },
+  {
+    game_name: "Last Will",
+    category_id: 4,
+    min_number_of_players: 2,
+    max_number_of_players: 5,
+    avg_min_game_time: 45,
+    avg_max_game_time: 75,
+    game_description:
+      "In Last Will, each player starts with a certain amount of money, an individual player board, two errand boys and two cards in some combination of properties and helpers. At the start of each round, lay out cards from the appropriate decks on the offering boards; the four regular decks are properties, companions, events, helpers and expenses, with special cards forming a deck of their own. The particular mix of cards varies by round and by the number of players.",
+  },
 ];
 
 const seedGame = () => Game.bulkCreate(gameData);
