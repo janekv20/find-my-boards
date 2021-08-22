@@ -93,7 +93,7 @@ The source code for the site is licensed under the MIT license and can be found 
 * giannellimj@gmail.com
 * jessica.sheleg@gmail.com
 * josh.sands@mail.com
-* 
+* jane.h.vo@gmail.com
 
 
 
