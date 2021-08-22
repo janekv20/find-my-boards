@@ -90,9 +90,10 @@ The source code for the site is licensed under the MIT license and can be found 
     * [Joshsands](http://github.com/Joshsands).
 
 * Or e-mail us at:
-giannellimj@gmail.com
-jessica.sheleg@gmail.com
-josh.sands@mail.com.
+* giannellimj@gmail.com
+* jessica.sheleg@gmail.com
+* josh.sands@mail.com
+* 
 
 
 
