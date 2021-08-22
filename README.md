@@ -18,7 +18,9 @@
 
 ![FindMyBoards GIF/Snapshot](./assets/snapshot.png)
 
-[CLICK HERE FOR THE FULL DEMONSTRATION VIDEO!](https:/)
+[DEPLOYED ON HEROKU!](https://findmyboards.herokuapp.com/)
+
+<!-- [CLICK HERE FOR THE FULL DEMONSTRATION VIDEO!](https:/) -->
 
 ## Project Description
 
@@ -57,10 +59,10 @@ The source code for the site is licensed under the MIT license and can be found 
     * [Joshsands](http://github.com/Joshsands).
 
 * Or e-mail us at:
-giannellimj@gmail.com
-jessica.sheleg@gmail.com
-<!-- add emails here -->
-josh.sands@mail.com.
+    * giannellimj@gmail.com
+    * josh.sands@mail.com.
+    * jessica.sheleg@gmail.com
+    * <!-- add emails here -->
 
 ## Elevator Pitch
 

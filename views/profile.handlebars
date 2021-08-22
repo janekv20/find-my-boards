@@ -2,7 +2,7 @@
 
   <div class="row">
 
-    <div class="col-4">
+    <div class="col-sm-4">
       <div class="card" style="background-color: #BFDBAE;">
         <div class="card-body">
           <div class="d-flex flex-column align-items-center text-center">
@@ -33,10 +33,10 @@
     </div>
 
 
-    <div class="col-4">
+    <div class="col-sm-4">
       <div class="card mb-3" style="background-color: #BFDBAE;">
         <div class="card-body text-center btn" id="favorite-button" style="background-color: darkgreen">
-          <h3 style="color:white">Favorite Games</h3>
+          <h3 style="color:white;">Favorite Games</h3>
         </div>
 
         <div class=" text-center">
@@ -59,7 +59,7 @@
 
 
 
-    <div class="col-4">
+    <div class="col-sm-4">
       <div class="card mb-3" style="background-color: #BFDBAE;">
         <div class="card-body text-center btn" id="comment-button" style="background-color: darkgreen;">
           <h3 style="color:white">Your Comments</h3>
@@ -99,11 +99,11 @@
           <ul class="list-group" id="following-list">
 
             {{#each user.followings}}
-            <button onclick='followingBtnHandler(this)' class='following-btn list-group-item list-group-item-action list-group-item-primary'>
-                <span style='opacity:0'
-                  id='follow-id'>{{id}}</span>{{following_username}}
-            </button>
+            <button onclick='followingBtnHandler(this)'
+              class='following-btn list-group-item list-group-item-action list-group-item-primary'>{{following_username}}</button>
+
             <div id='unfollow-btn-div-{{id}}' class='col-sm-5' style="align-self:center">
+             
             </div>
             {{/each}}
           </ul>
