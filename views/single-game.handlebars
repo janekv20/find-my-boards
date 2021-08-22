@@ -13,7 +13,7 @@
 <div id="popover-content" class="hidden">
   <div>
     {{#each game.ranks}}
-   <a class="btn btn-info mx-auto" href="../profile/{{user_id}}">{{user.username}}</a>
+   <a class="btn btn-info mx-auto" style="font-size: 1rem;" href="../profile/{{user_id}}">{{user.username}}</a>
     <br>
 
   {{!-- {{#if user.image}}
@@ -31,11 +31,11 @@
 </div>
 </div>
 
-<div class="game-card mx-auto">
+<div class="game-card mx-auto" style="max-width: 100%;">
   <div class="cont">
     <div class="title single">
       <p>{{game.category.category_name}}</p>
-      <h2>{{game.game_name}}</h2>
+      <h2 style="font-size: 1rem;">{{game.game_name}}</h2>
     </div>
     <p id="play-details"><b>Game Details</b></p>
     <div class="details">
@@ -54,7 +54,7 @@
   </div>
 </div>
 <br />
-<div class="card mx-auto button-container" >
+<div class="card mx-auto button-container" style="max-width: 50%;" >
 <button id="favorite" class="upvote-btn btn btn-danger" data-container="body" data-trigger="hover" data-placement="right" data-content="CLICK TO ADD GAME TO YOUR FAVORITES!" ><i
       class="fas fa-heart"
     ></i></button>
