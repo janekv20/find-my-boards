@@ -11,6 +11,8 @@ header {
     background: white;
     width: 550px;
     height: 550px;
+    max-width: 100%;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
