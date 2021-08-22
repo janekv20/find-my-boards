@@ -99,7 +99,7 @@ else {
                         });
 
                         if (response.ok) {
-                           // reload upon deletion to render updated list of followers
+                            // reload upon deletion to render updated list of followers
                             window.location.reload();
                         } else {
                             alert(response.statusText)
@@ -172,15 +172,15 @@ async function editComment(btn) {
     const btnId = btn.id
 
     const commentId = btnId.split('-')[1];
-    
+
     const comment_text = document.getElementById
-    ("comment-update-" + commentId).textContent;
+        ("comment-update-" + commentId).textContent;
     console.log(comment_text)
 
-    const game_id = document.getElementsByClassName("li-" +commentId)[0].id
+    const game_id = document.getElementsByClassName("li-" + commentId)[0].id
     console.log(game_id)
 
-    const response = await fetch ('api/comments/'+ commentId, {
+    const response = await fetch('api/comments/' + commentId, {
         method: 'PUT',
         body: JSON.stringify({
             game_id,
@@ -195,7 +195,7 @@ async function editComment(btn) {
     if (!response.ok) {
         alert(response.statusText);
     }
-console.log(response)
+    console.log(response)
 }
 
 //delete comment function peer coded with Mark
@@ -203,29 +203,26 @@ async function deleteComment(btn) {
     const btnId = btn.id
 
     const commentId = btnId.split('-')[1];
-    
+
     const comment_text = document.getElementById
-    ("comment-update-" + commentId).textContent;
+        ("comment-update-" + commentId).textContent;
     console.log(comment_text)
 
-    const game_id = document.getElementsByClassName("li-" +commentId)[0].id
+    const game_id = document.getElementsByClassName("li-" + commentId)[0].id
     console.log(game_id)
 
-    const response = await fetch ('api/comments/'+ commentId, {
+    const response = await fetch('api/comments/' + commentId, {
         method: 'DELETE',
-        body: JSON.stringify({
-            game_id,
-            comment_text,
-        }),
         headers: {
             'Content-Type': 'application/json'
         }
-
     });
 
-    if (!response.ok) {
-        alert(response.statusText);
+    if (response.ok) {
+        window.location.reload();
+    } else {
+        alert(response.statusText)
     }
-console.log(response)
+
 }
 
