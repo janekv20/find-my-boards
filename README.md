@@ -40,20 +40,21 @@ in the board game community to create life long connections!
 
 ## Acceptance Criteria
 
+
     GIVEN the find-my-boards home page
-    THEN I am  presented with the title of the application, a short description, the current top 10 list of user rated board games, and a link to login or create a new account
+    THEN I am  presented with the title of the application, a carousel of games, a link to games and a link to login or create a new account
     WHEN I click on the login link
-    THEN I am directed to either login or create my account( links will be separate pages)
+    THEN I am directed to either login page or sign up page
     WHEN I log into my profile
-    THEN I am presented with a dashboard that includes my favorite games and friends list as well as search functions for finding new games and friends.
-    WHEN I use the board game search function
-    THEN I can enter board game parameters such as title, catagory or number of players and be presented with a list of matching games 
-    WHEN I select a board game
-    THEN I am presented with the game description, a way to make comments, read comments and view the current ratings of the game based on user feedback
-    WHEN I navigate to the friends list
-    THEN I am redirected to a page that allows me to search for a username or filter for users based on their friends list
-    WHEN I select a user from the community
-    THEN I am able to view the user's profile, add them to my friends list(follow), see their favorite games and view the history of their posted comments. 
+    THEN I am presented with a dashboard that includes my favorite games, following list and comments that I have previously made.
+    WHEN I click on games
+    THEN I can see all the current games available with the number of comments, number of favorites and a short description of the game 
+    WHEN I select see more information on the game
+    THEN I am presented with the game description, a way to make comments, read comments and view the current ratings of the game based on user feedback along with additional information on the game
+    WHEN I click on a persons name in following on my profile
+    THEN I am able to see their profile with their favorite games, comments and who they are following
+    WHEN I view their profile 
+    THEN I am able to follow them or unfollow them.
 
 ## Installation Instructions
 
@@ -90,10 +91,15 @@ The source code for the site is licensed under the MIT license and can be found 
     * [Joshsands](http://github.com/Joshsands).
 
 * Or e-mail us at:
+
 * giannellimj@gmail.com
 * jessica.sheleg@gmail.com
 * josh.sands@mail.com
 * jane.h.vo@gmail.com
+
+
+
+
 
 
 
