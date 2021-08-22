@@ -65,23 +65,31 @@ if (urlLastWord !== 'profile') {
 }
 else {
 
+    // get username from the profile page
     const username = $('#profile-username').text()
 
+    // get list of following ids associated with username 
     getFollowingIds(username)
 
         .then((followIdArray) => {
-
+            // for every following id, make an unfollow button
             for (let i = 0; i < followIdArray.length; i++) {
-                const followId = $('#follow-id').text()
 
                 const unfollowBtn = $('<button>')
-                    .addClass('btn')
-                    .text('-Unfollow')
+                    .addClass('btn btn-primary')
+                    .html('<i class="fas fa-user-minus"></i>')
                     .attr({
                         type: 'button',
                         id: 'unfollow-btn'
                     })
+                    // add on click method to find the closest div, pull the id of that div and get the number at the end of the div id
+                    // pass that id to the delete route to delete that specific following id
                     .on('click', async function () {
+
+                        const followIdDivArray = $(this).closest('div').attr('id').split('-');
+
+                        const followId = followIdDivArray[followIdDivArray.length - 1];
+
                         const response = await fetch(`/api/followings/${followId}`, {
                             method: 'DELETE',
                             headers: {
@@ -90,7 +98,7 @@ else {
                         });
 
                         if (response.ok) {
-                            $(this).closest('li').remove();
+                           // reload upon deletion to render updated list of followers
                             window.location.reload();
                         } else {
                             alert(response.statusText)
