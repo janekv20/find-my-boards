@@ -90,8 +90,6 @@ else {
 
                         const followId = followIdDivArray[followIdDivArray.length - 1];
 
-                        console.log(followId)
-
                         const response = await fetch(`/api/followings/${followId}`, {
                             method: 'DELETE',
                             headers: {
