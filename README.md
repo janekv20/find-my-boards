@@ -28,7 +28,9 @@ in the board game community to create life long connections!
 
 ![FindMyBoards GIF/Snapshot](./assets/snapshot.png)
 
-[CLICK HERE FOR THE FULL DEMONSTRATION VIDEO!](https:/)
+[DEPLOYED ON HEROKU!](https://findmyboards.herokuapp.com/)
+
+<!-- [CLICK HERE FOR THE FULL DEMONSTRATION VIDEO!](https:/) -->
 
 ## User Story
 

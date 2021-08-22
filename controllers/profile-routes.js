@@ -101,7 +101,7 @@ router.get('/profile/:id', (req, res) => {
 })
 
 // create a route to download a photo to the upload folder
-router.post('', (req, res) => {
+router.post('/profile', (req, res) => {
 
   // we will call a variable with the same name of the input field on the form in profile handlebars file
   let profilePic;
@@ -116,15 +116,8 @@ router.post('', (req, res) => {
   // get file object and get move function from object						
   profilePic = req.files.profilePic;
 
-  // update dirname path to remove controllers so we can upload picture to the public/images folder
-  const dirnamePathArray = __dirname.toString().split('\\')
-
-  const updatedDirnamePathArray = dirnamePathArray.filter( item => item != 'controllers');
-
-  const finalDirnamePath = updatedDirnamePathArray.join('\\')
-
   // create an upload path that we will pass into the move funciton or mv()	
-  uploadPath = finalDirnamePath + '/public/images/' + profilePic.name;
+  uploadPath = __dirname + '/profile-pic/' + profilePic.name;
   
   // use mv() to place file on the server. Will move it to the directory we created on line 39 of this doc which moves it to the upload folder						
   profilePic.mv(uploadPath, function (err) {
