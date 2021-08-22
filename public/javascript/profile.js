@@ -157,3 +157,14 @@ function followToggle() {
 
 followButton.addEventListener("click", followToggle);
 
+const editButton = document.getElementById("editComment");
+
+function editComment() {
+    const comment_text = document.getElementById
+    ("comment-update").textContent;
+    console.log(comment_text)
+
+
+}
+
+editButton.addEventListener("click", editComment);

@@ -20,7 +20,6 @@ router.put('/', (req, res) => {
       comment_text: req.body.comment_text,
       game_id: req.body.game_id,
       // use the id from the session
-      user_id: req.session.user_id
     })
       .then(dbCommentData => res.json(dbCommentData))
       .catch(err => {

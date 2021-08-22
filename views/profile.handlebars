@@ -69,12 +69,11 @@
           <div class="col-12 text-center">
             <ul class="list-group" id="comment-list">
               {{#each user.comments}}
-
-
               <li class="list-group-item list-group-item-action list-group-item-info">
-                <h4>{{game.game_name}}: <i>"{{comment_text}}"</i></h4>
+                <h4>{{game.game_name}}: <i id="comment-update">"{{comment_text}}"</i></h4>
               </li>
-
+              <button class="btn btn-success btn-sm rounded-0" id="editComment" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+              <button class="btn btn-danger btn-sm rounded-0" id="deleteComment" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
               {{/each}}
             </ul>
 
@@ -99,14 +98,12 @@
           <ul class="list-group" id="following-list">
 
             {{#each user.followings}}
-            <button onclick='followingBtnHandler(this)' class='following-btn list-group-item list-group-item-action list-group-item-primary'>
-                <span style='opacity:0'
-                  id='follow-id'>{{id}}</span>{{following_username}}
-            </button>
+            <button onclick='followingBtnHandler(this)'
+              class='following-btn list-group-item list-group-item-action list-group-item-primary'>{{following_username}}</button>
             <div id='unfollow-btn-div-{{id}}' class='col-sm-5' style="align-self:center">
             </div>
             {{/each}}
-          </ul>
+
 
         </div>
 
