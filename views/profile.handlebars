@@ -99,13 +99,11 @@
           <ul class="list-group" id="following-list">
 
             {{#each user.followings}}
-            <button onclick='followingBtnHandler(this)' class='following-btn '>
-              <li class="list-group-item list-group-item-action list-group-item-primary"><span style='opacity:0'
-                  id='follow-id'>{{id}}</span>{{following_username}}</li>
-            </button>
+            <button onclick='followingBtnHandler(this)'
+              class='following-btn list-group-item list-group-item-action list-group-item-primary'>{{following_username}}</button>
             <div id='unfollow-btn-div-{{id}}' class='col-sm-5' style="align-self:center">
+             
             </div>
-
             {{/each}}
           </ul>
 
