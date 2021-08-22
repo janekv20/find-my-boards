@@ -1,6 +1,8 @@
 
 *{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -125,4 +127,23 @@ footer{
 
 #follow-btn {
   border: .1rem solid black;
+}
+
+@media screen and (max-width: 768px) {
+  .hero img {
+    width: 75%;
+    margin-left: 10%;
+}
+}
+
+@media screen and (max-width: 575px) {
+footer {
+max-width: 50%;
+margin-left: 25%;
+margin-top: 25%;
+margin-bottom: 0%;
+}
+footer h2 {
+display: none;
+}
 }

@@ -13,6 +13,23 @@ router.get("/", (req, res) => {
     });
 });
 
+router.put('/', (req, res) => {
+  // check the session
+  if (req.session) {
+    Comment.update({
+      comment_text: req.body.comment_text,
+      game_id: req.body.game_id,
+      // use the id from the session
+      user_id: req.session.user_id
+    })
+      .then(dbCommentData => res.json(dbCommentData))
+      .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+      });
+  }
+});
+
 router.post('/', (req, res) => {
   // check the session
   if (req.session) {
@@ -48,5 +65,7 @@ router.delete("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
 
 module.exports = router;
