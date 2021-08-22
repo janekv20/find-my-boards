@@ -56,6 +56,6 @@ app.use(function(req, res, next) {
   // res.type('txt').send('Not found');
 });
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: false}).then(() => {
   app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
 });

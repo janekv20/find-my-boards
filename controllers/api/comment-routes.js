@@ -13,13 +13,18 @@ router.get("/", (req, res) => {
     });
 });
 
-router.put('/', (req, res) => {
+router.put('/:id', (req, res) => {
   // check the session
   if (req.session) {
     Comment.update({
       comment_text: req.body.comment_text,
       game_id: req.body.game_id,
+
       // use the id from the session
+      user_id: req.session.user_id},
+      {where: {
+        id: req.params.id,
+      }
     })
       .then(dbCommentData => res.json(dbCommentData))
       .catch(err => {

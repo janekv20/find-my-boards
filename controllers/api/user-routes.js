@@ -28,7 +28,7 @@ router.get('/username/:username', (req, res) => {
         attributes: ["id", "comment_text", "created_at"],
         include: {
           model: Game,
-          attributes: ["game_name"],
+          attributes: ["id","game_name"],
         },
       },
       // games attribute name through rank as ranked games
@@ -73,7 +73,7 @@ router.get("/:id", (req, res) => {
         attributes: ["id", "comment_text", "created_at"],
         include: {
           model: Game,
-          attributes: ["game_name"],
+          attributes: ["id","game_name"],
         },
       },
       // games attribute name through rank as ranked games

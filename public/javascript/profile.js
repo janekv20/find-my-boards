@@ -167,10 +167,65 @@ followButton.addEventListener("click", followToggle);
 
 const editButton = document.getElementById("editComment");
 
-function editComment() {
+//edit comment function peer coded with Mark
+async function editComment(btn) {
+    const btnId = btn.id
+
+    const commentId = btnId.split('-')[1];
+    
     const comment_text = document.getElementById
-    ("comment-update").textContent;
+    ("comment-update-" + commentId).textContent;
     console.log(comment_text)
+
+    const game_id = document.getElementsByClassName("li-" +commentId)[0].id
+    console.log(game_id)
+
+    const response = await fetch ('api/comments/'+ commentId, {
+        method: 'PUT',
+        body: JSON.stringify({
+            game_id,
+            comment_text,
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+
+    });
+
+    if (!response.ok) {
+        alert(response.statusText);
+    }
+console.log(response)
 }
 
-editButton.addEventListener("click", editComment);
+//delete comment function peer coded with Mark
+async function deleteComment(btn) {
+    const btnId = btn.id
+
+    const commentId = btnId.split('-')[1];
+    
+    const comment_text = document.getElementById
+    ("comment-update-" + commentId).textContent;
+    console.log(comment_text)
+
+    const game_id = document.getElementsByClassName("li-" +commentId)[0].id
+    console.log(game_id)
+
+    const response = await fetch ('api/comments/'+ commentId, {
+        method: 'DELETE',
+        body: JSON.stringify({
+            game_id,
+            comment_text,
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+
+    });
+
+    if (!response.ok) {
+        alert(response.statusText);
+    }
+console.log(response)
+}
+
