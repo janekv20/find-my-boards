@@ -70,10 +70,10 @@
             <ul class="list-group" id="comment-list">
               {{#each user.comments}}
               <li id={{game.id}} class="li-{{id}} list-group-item list-group-item-action list-group-item-info">
-                <h4>{{game.game_name}}: <i id="comment-update-{{id}}">"{{comment_text}}"</i></h4>
+                <h4 class='h4-comment'>{{game.game_name}}: <p id="comment-update-{{id}}">{{comment_text}}</p></h4>
               </li>
-              <button onclick="editComment(this)" class="btn btn-success btn-sm rounded-0" id="editComment-{{id}}" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
-              <button onclick="deleteComment(this)" class="btn btn-danger btn-sm rounded-0" id="deleteComment-{{id}}" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+              <button onclick="editComment(this)" class="btn btn-success btn-sm rounded-0" id="editComment-{{id}}" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit">Submit Edit</i></button>
+              <button onclick="deleteComment(this)" class="btn btn-danger btn-sm rounded-0" id="deleteComment-{{id}}" type="button" style='margin-bottom: 1rem' data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
               {{/each}}
             </ul>
 

@@ -1,3 +1,5 @@
+const commentareaArray = $('p')
+
 async function getFollowingIds(username) {
 
     const followIdArray = []
@@ -225,4 +227,55 @@ async function deleteComment(btn) {
     }
 
 }
+
+
+// add event listener click to all the comment text areas
+
+$('.h4-comment').on('click', 'p', (item) => {
+    // deconstruct the window object and pull target
+    const { target } = item
+    // get p element from target
+    const pEl = { target }.target
+    // get id from text area element
+    const pElId = pEl.id
+
+    var text = $(pEl)
+        .text()
+        .trim()
+
+    var textInput = $('<textarea>')
+        .attr('id', pElId)
+        .val(text);
+
+    $(pEl).replaceWith(textInput);
+
+    textInput.trigger('focus');
+})
+
+//  - hardcode the <p> content on blur
+$('.h4-comment').on('blur', 'textarea', async function (item) {
+    // deconstruct the window object and pull target
+    const { target } = item
+    
+    // get p element from target
+    const textareaEl = { target }.target
+    
+    // get id from text area element
+    const textareaElId = textareaEl.id
+    
+    var text = $(textareaEl)
+        .val()
+        .trim()
+
+    console.log(text);
+
+    var textInput = $('<p>')
+        .attr('id', textareaElId)
+        .text(text);
+
+    console.log(textInput);
+    $(textareaEl).replaceWith(textInput);
+
+
+})
 
