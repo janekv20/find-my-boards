@@ -12,11 +12,8 @@
     "express-handlebars": "^5.3.3",
     "express-session": "^1.17.2",
     "handlebars": "^4.7.7",
-<<<<<<< HEAD
     "handlebars-helper-css": "^0.1.0",
     "i": "^0.3.6",
-=======
->>>>>>> 3da74c1743f2ea3c94bf0f8e914d12536351eb07
     "mysql2": "^2.3.0",
     "nodemon": "^2.0.12",
     "sequelize": "^6.6.5"

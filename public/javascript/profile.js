@@ -1,3 +1,5 @@
+const commentareaArray = $('p')
+
 async function getFollowingIds(username) {
 
     const followIdArray = []
@@ -99,7 +101,7 @@ else {
                         });
 
                         if (response.ok) {
-                           // reload upon deletion to render updated list of followers
+                            // reload upon deletion to render updated list of followers
                             window.location.reload();
                         } else {
                             alert(response.statusText)
@@ -164,4 +166,116 @@ function followToggle() {
 }
 
 followButton.addEventListener("click", followToggle);
+
+const editButton = document.getElementById("editComment");
+
+//edit comment function peer coded with Mark
+async function editComment(btn) {
+    const btnId = btn.id
+
+    const commentId = btnId.split('-')[1];
+
+    const comment_text = document.getElementById
+        ("comment-update-" + commentId).textContent;
+    console.log(comment_text)
+
+    const game_id = document.getElementsByClassName("li-" + commentId)[0].id
+    console.log(game_id)
+
+    const response = await fetch('api/comments/' + commentId, {
+        method: 'PUT',
+        body: JSON.stringify({
+            game_id,
+            comment_text,
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+
+    });
+
+    if (!response.ok) {
+        alert(response.statusText);
+    }
+    console.log(response)
+}
+
+//delete comment function peer coded with Mark
+async function deleteComment(btn) {
+    const btnId = btn.id
+
+    const commentId = btnId.split('-')[1];
+
+    const comment_text = document.getElementById
+        ("comment-update-" + commentId).textContent;
+    console.log(comment_text)
+
+    const game_id = document.getElementsByClassName("li-" + commentId)[0].id
+    console.log(game_id)
+
+    const response = await fetch('api/comments/' + commentId, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    if (response.ok) {
+        window.location.reload();
+    } else {
+        alert(response.statusText)
+    }
+
+}
+
+
+// add event listener click to all the comment text areas
+
+$('.h4-comment').on('click', 'p', (item) => {
+    // deconstruct the window object and pull target
+    const { target } = item
+    // get p element from target
+    const pEl = { target }.target
+    // get id from text area element
+    const pElId = pEl.id
+
+    var text = $(pEl)
+        .text()
+        .trim()
+
+    var textInput = $('<textarea>')
+        .attr('id', pElId)
+        .val(text);
+
+    $(pEl).replaceWith(textInput);
+
+    textInput.trigger('focus');
+})
+
+//  - hardcode the <p> content on blur
+$('.h4-comment').on('blur', 'textarea', async function (item) {
+    // deconstruct the window object and pull target
+    const { target } = item
+    
+    // get p element from target
+    const textareaEl = { target }.target
+    
+    // get id from text area element
+    const textareaElId = textareaEl.id
+    
+    var text = $(textareaEl)
+        .val()
+        .trim()
+
+    console.log(text);
+
+    var textInput = $('<p>')
+        .attr('id', textareaElId)
+        .text(text);
+
+    console.log(textInput);
+    $(textareaEl).replaceWith(textInput);
+
+
+})
 
